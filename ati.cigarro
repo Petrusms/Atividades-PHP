@@ -1,0 +1,38 @@
+<?php
+
+ $cigarros; $diasanos; $dias;  $anos; $diasperdidos; $tempodevidaperdido;
+
+ $cigarros = readline("Quantos cigarros você fuma por dia?: ");
+ $diasanos = readline("Você fuma a dias ou a anos?: ");
+ if($diasanos=="dias"){
+
+    $dias = readline("Há quantos dias você fuma ?: ");
+    $tempodevidaperdido = round((11 * $dias * $cigarros)/60);
+
+    if($tempodevidaperdido<1){
+      if($tempodevidaperdido<0.1){
+      print ("Você perdeu 1 minutos de vida");
+    }
+    else{
+      print ("Você perdeu $tempodevidaperdido minutos de vida");
+    }
+   }
+    else{
+    print ("Você perdeu $tempodevidaperdido horas de vida");   
+    }
+ }
+ else{
+
+   $anos = readline("Há quantos anos você fuma ?: ");
+   $tempodevidaperdido = round(((11 * $anos * 365 * $cigarros)/60)/24);
+
+   if($tempodevidaperdido<365){
+   print ("Você perdeu $tempodevidaperdido dias de vida");
+   }
+   else{
+   $tempodevidaperdido = $tempodevidaperdido/365;
+   print ("Você perdeu aproximadamente $tempodevidaperdido anos de vida");   
+   }
+ }
+ 
+?>
