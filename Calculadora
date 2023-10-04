@@ -1,1 +1,32 @@
- return $resultado;
+<?php
+
+$n1; $n2; $operacao; $resultado;
+
+$n1 = readline("Infome um número: ");
+$n2 = readline("Infome outro número: ");
+$operacao = readline("Infome uma operação(+,-,x ou .): ");
+$resultado = calculadora($n1,$n2,$operacao);
+print ("O resultado é $resultado");
+
+function calculadora($n1,$n2,$operacao){
+
+    switch ($operacao){
+        case "+":
+            $resultado = $n1 + $n2;
+        break;
+        case "-":
+            $resultado = $n1 - $n2;
+        break;
+        case ".":
+            $resultado = $n1 . $n2;
+        break;
+        case "x":
+            $resultado = $n1 . $n2;
+        break;
+    }
+    return $resultado;
+}
+?>
+//uso pelo terminal  php calculadora.php
+
+
