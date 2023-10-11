@@ -1,13 +1,16 @@
 <?php
-$chute = (int) readline("Digite um número entre 1 e 10: ");
-$n1 = random_int(1,10);
-if($chute == $n1){
-    print "Vocẽ venceu";
-} else {
+
+    $chute = (int) readline("Digite um número entre 1 e 10: ");
+    $n1 = random_int(1,10);
+
+while($chute != $n1){
+
     if($chute>$n1){
-        print "Vocẽ perdeu, mas seu chute foi alto";
+        print("Vocẽ perdeu, mas seu chute foi alto\n");
     } else{
-        print "Vocẽ perdeu, mas seu chute foi baixo";
+       print("Vocẽ perdeu, mas seu chute foi baixo\n");
     }
+    $chute = (int) readline("Escolha outro número: ");
 }
+print "Vocẽ venceu";
 ?>
