@@ -1,0 +1,9 @@
+<?php
+$chute = (int) readline("Digite um número entre 1 e 10: ");
+
+if($chute == 10){
+    print "Vocẽ venceu";
+} else {
+    print "Vocẽ perdeu";
+}
+?>
