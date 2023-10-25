@@ -1,0 +1,13 @@
+<?php
+
+print "***Top five heroes of the world***\n";
+$hero = ["miranha", "batman", "panter black","Super man","deadpool","saitama"];
+
+for($i=0;$i<sizeof($hero);$i++)
+{
+ print($i+1)."° lugar: ".$hero[$i]."\n";
+}
+
+//var_dump($hero);
+//print_r($hero);
+?>
