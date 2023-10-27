@@ -1,0 +1,23 @@
+<?php
+
+$suspeito=0;
+$Question=["Telefonou para a vitima?" , "Esteve no local dp crime?" , "Mora perto da vitima?" , "Devia para a vitima?" , "Ja trabalhou com a vitima?"];
+for($i=0;$i<5;$i++){
+   $res= readline($Question[$i]);
+    if($res=="sim"){
+     $suspeito++;
+    }
+}
+if($suspeito<2){
+    print"Você é inocente";
+}
+else if($respostas== 2){
+    print"Você é suspeito";
+}
+else if($suspeito==3 or $suspeito==4){
+    print"Você é cúmplice";
+}
+else{
+    print"Você é o assasino";
+}
+?>
