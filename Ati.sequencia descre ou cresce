@@ -1,0 +1,25 @@
+ <?php
+
+for($i=0;$i<5;$i++)
+{
+ $n1=readline("Informe um número: ");
+ $numeros[] = $n1;
+}
+$resposta=readline("Você quer a sequencia em ordem decrescente(1) ou crescente(2)?\n");
+
+ if($resposta==2)
+ {
+sort($numeros);
+foreach($numeros as  $n)
+{
+print("$n\n");
+}
+ }
+else{
+rsort($numeros);
+foreach($numeros as  $nn)
+{
+print("$nn\n");
+}
+ }
+ ?>
