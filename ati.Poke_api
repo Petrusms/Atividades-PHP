@@ -1,1 +1,20 @@
+<?php
 
+
+print("Informe um nome de pokemon: \n");
+$nomepokemon = readline("");
+
+$dados_em_texto = file_get_contents("https://pokeapi.co/api/v2/pokemon/$nomepokemon");
+
+$pokemon = json_decode($dados_em_texto, true);
+
+print("Nome: " . strtoupper($pokemon['name']) . "\n");
+print("Altura: " . $pokemon['height'] . "\n");
+print("Peso: " . $pokemon['weight'] . "\n");
+
+foreach($pokemon['moves'] as $move)
+{
+print("Movimentos: " . $move['move']['name'] . "\n");
+}
+
+?>
