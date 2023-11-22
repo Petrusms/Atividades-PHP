@@ -9,12 +9,14 @@ $dados_em_texto = file_get_contents("https://pokeapi.co/api/v2/pokemon/$nomepoke
 $pokemon = json_decode($dados_em_texto, true);
 
 print("Nome: " . strtoupper($pokemon['name']) . "\n");
-print("Altura: " . $pokemon['height'] . "\n");
+$altura = $pokemon['height'];
+$altura = $altura/10;
+print("Altura: " . $altura . " metros\n");
 print("Peso: " . $pokemon['weight'] . "\n");
 
 foreach($pokemon['moves'] as $move)
 {
-print("Movimentos: " . $move['move']['name'] . "\n");
+print("Ataques: " . $move['move']['name'] . "\n");
 }
 
 ?>
