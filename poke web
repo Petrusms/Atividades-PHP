@@ -1,0 +1,60 @@
+<html>
+
+<head>
+
+    <title>Pokédex</title>
+
+    <style>
+        #pesquisa
+        {
+            background: palegoldenrod;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            padding: 20px; 
+            text-align: center;
+        }
+
+        .pokemon
+        {
+            width: 20%;
+            border: solid 2px;
+            padding: 15px; /*Margem interna */
+            margin: 10px 10px 10px 10px;           
+            float:left;
+            text-align: center;
+        }
+
+        .pokemon img
+        {
+            max-width: 100%;
+
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div id="pesquisa">
+        <form>
+            <input type="text" placeholder="Digite um Pokémon">
+            <input type="submit" value="buscar">
+        </form>
+    </div>
+
+    <div id="pokemons">
+
+        <?php for($i = 0; $i<20; $i++): ?>
+            <div class="pokemon">
+                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/094.png" alt="Gengar" width="200px">
+
+                <h1>Gengar</h1>
+                <p>peso: 40.5</p>
+                <p>altura: 1.5</p>
+
+            </div>
+        <?php endfor; ?>
+    </div>
+
+</body>
+
+</html>
