@@ -12,11 +12,16 @@ print("Nome: " . strtoupper($pokemon['name']) . "\n");
 $altura = $pokemon['height'];
 $altura = $altura/10;
 print("Altura: " . $altura . " metros\n");
-print("Peso: " . $pokemon['weight'] . "\n");
+$peso =  $pokemon['weight'];
+$peso = $peso/10;
+print("Peso: " . $peso . " Kg\n");
 
+$a=0;
 foreach($pokemon['moves'] as $move)
 {
 print("Ataques: " . $move['move']['name'] . "\n");
+$a++;
 }
+print("Esse pokémon possui $a ataques");
 
 ?>
