@@ -12,9 +12,8 @@ echo"Escreva uma frase ou texto.\n";
 $texto = readline("");
 echo"Fale o caracter que deseja remover:\n";
 $caractere = readline('');
-$ocorrencias = removerCaractere($texto, $caractere);
+$repetidos = removerCaractere($texto, $caractere);
 echo "Texto modificado: " . $texto . "\n";
-echo "O caractere '$caractere' foi removido $ocorrencias vezes.";
-
+echo "O caractere '$caractere' foi removido $repetidos vezes.";
 
 ?>
