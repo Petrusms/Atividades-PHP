@@ -7,7 +7,6 @@ function removerCaractere(&$string, $caractere)
     return $count;
 }
 
-// Exemplo de uso
 echo"Escreva uma frase ou texto.\n";
 $texto = readline("");
 echo"Fale o caracter que deseja remover:\n";
