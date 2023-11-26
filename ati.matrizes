@@ -19,4 +19,15 @@ for ($l = 0; $l < 3; $l++) {
         }
     }
 }
+
+// Mostra os números ímapres e suas posições
+echo "Números pares digitados:\n";
+for ($l = 0; $l < 3; $l++) {
+    for ($c = 0; $c < 5; $c++) {
+        if ($matriz[$l][$c] % 2 != 0) {
+            echo "O número " . $matriz[$l][$c] . " está na posição [$l][$c]\n";
+        }
+    }
+}
+
 ?>
