@@ -1,0 +1,20 @@
+<?php 
+
+function removerCaractere(&$string, $caractere) 
+{
+    $count = substr_count($string, $caractere);
+    $string = str_replace($caractere, '', $string);
+    return $count;
+}
+
+// Exemplo de uso
+echo"Escreva uma frase ou texto.\n";
+$texto = readline("");
+echo"Fale o caracter que deseja remover:\n";
+$caractere = readline('');
+$ocorrencias = removerCaractere($texto, $caractere);
+echo "Texto modificado: " . $texto . "\n";
+echo "O caractere '$caractere' foi removido $ocorrencias vezes.";
+
+
+?>
