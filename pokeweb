@@ -21,7 +21,7 @@
 
 ?>
 
-html>
+<html>
 
 <head>
 
@@ -68,7 +68,7 @@ html>
 
         <?php for($i = 0; $i<20; $i++): ?>
             <div class="pokemon">
-                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/094.png" alt="Gengar" width="200px">
+                <img src=<?= $pokemons['results'][$i]['sprites']['other']['dream_world']['front_default'] ?>alt="Gengar" width="200px">
 
                 <h1><?= $pokemons['results'][$i]['name'] ?></h1>
                 <p>peso: 40.5</p>
