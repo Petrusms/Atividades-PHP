@@ -1,4 +1,27 @@
-<html>
+<?php
+
+    $pokemon_api = file_get_contents("https://pokeapi.co/api/v2/pokemon/");
+    $pokemons = json_decode($pokemon_api, true);
+
+    for($i = 0; $i < 20; $i++)
+    {
+        $pokemon = $pokemons['results'][$i];
+
+        $todas_infos_api = file_get_contents($pokemon['url']);
+        $pokemons['results'][$i] = json_decode($todas_infos_api, true);
+    }
+
+    // print '<pre>';
+    // print_r($pokemons['results']);
+    // print '</pre>';
+    // die;
+
+    // $dados_em_texto = file_get_contents("https://pokeapi.co/api/v2/pokemon/($nome)");
+    // $pokemon = json_decode($dados_em_texto, true);
+
+?>
+
+html>
 
 <head>
 
@@ -47,7 +70,7 @@
             <div class="pokemon">
                 <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/094.png" alt="Gengar" width="200px">
 
-                <h1>Gengar</h1>
+                <h1><?= $pokemons['results'][$i]['name'] ?></h1>
                 <p>peso: 40.5</p>
                 <p>altura: 1.5</p>
 
