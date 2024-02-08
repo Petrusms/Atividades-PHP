@@ -1,0 +1,12 @@
+<?php
+
+$quant = readline("Qual a quantidade de números ímpares que deseja? ");
+$ii = 1;
+
+for($i=0; $i<$quant; $i++)
+{
+    print"$ii, ";
+    $ii = $ii + 2;
+}
+
+?>
