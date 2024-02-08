@@ -1,0 +1,10 @@
+<?php
+
+$soma = 0;
+
+for($valor = 1; $valor < 101; $valor++)
+{
+    $soma= $soma + $valor;
+    print($soma . ",");
+}
+?>
