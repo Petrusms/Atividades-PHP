@@ -1,0 +1,27 @@
+<?php 
+
+$escolha = readline("Qual tipo de programa você deseja que seja feito a impressão?(WHILE, DO-WHILE, FOR)");
+
+$parar = 0;
+$parar2 = 1;
+if($escolha == 'WHILE'){
+    while($parar != 11)
+    {
+
+        $parar++;
+        print($parar . "\n");
+
+    }
+} elseif($escolha == 'DO-WHILE'){
+    do{
+        print($parar2 . "\n");
+        $parar2++;
+    } while($parar2 != 11);
+
+} else{
+    for($i=1; $i<=10; $i++)
+    {
+        print("$i \n");
+    }
+}
+?>
