@@ -1,0 +1,14 @@
+<?php
+
+$pri=readline("Informe o primeiro valor a ser multiplicado:");
+$seg=readline("Informe o segundo número:");
+$resul=0;
+
+for($i=0; $i<$seg; $i++)
+{
+    $resul=$resul+$pri;
+}
+
+Print"O resultado é $resul.";
+
+?>
