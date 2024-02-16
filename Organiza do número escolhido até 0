@@ -1,0 +1,23 @@
+<?php
+
+$num=readline("Infome um número qualquer:");
+
+$mostra=$num;
+
+if($num<0)
+{
+    for($i=0; $i>$num; $i--)
+    {
+        $mostra=$mostra+1;
+        print"$mostra ,";
+    }
+}
+else
+{
+    for($i=0; $i<$num; $i++)
+    {
+        $mostra=$mostra-1;
+        print"$mostra ,";
+    }
+}
+?>
