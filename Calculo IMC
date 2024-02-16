@@ -8,6 +8,6 @@ for($i=0; $i<$npessoas; $i++)
     $peso=readline("Informe seu peso:(kg)");
     $altura=readline("Qual sua altura?(Em metros com virgula como 1.80)");
     $imc=$peso/($altura*$altura);
-    print"Seu nome é $nome, seu peso atual é $peso e altura $altura, seu IMC é $imc\n";
+    print"Seu nome é $nome, seu peso atual é $peso kg e altura $altura m, seu IMC é $imc\n";
 }
 ?>
