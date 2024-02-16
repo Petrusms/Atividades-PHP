@@ -5,7 +5,7 @@ $npessoas=readline("Quantas pessoas irão fazer o IMC?\n");
 for($i=0; $i<$npessoas; $i++)
 {
     $nome=readline("Informe seu nome:");
-    $peso=readline("Informe seu peso:");
+    $peso=readline("Informe seu peso:(kg)");
     $altura=readline("Qual sua altura?(Em metros com virgula como 1.80)");
     $imc=$peso/($altura*$altura);
     print"Seu nome é $nome, seu peso atual é $peso e altura $altura, seu IMC é $imc\n";
