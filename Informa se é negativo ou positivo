@@ -6,7 +6,9 @@ for($i=1; $i<=$quant; $i++)
 {
     $num=readline("Informe o $i º número:\n");
 
-    if($num<0)
+    if($num==0)
+    print"0 é neutro";
+    elseif($num<0)
     print"Ele é negativo";
     else
     print"Ele é positivo";
