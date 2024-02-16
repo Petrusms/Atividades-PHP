@@ -8,6 +8,12 @@ for($i=0; $i<$npessoas; $i++)
     $peso=readline("Informe seu peso:(kg)");
     $altura=readline("Qual sua altura?(Em metros com virgula como 1.80)");
     $imc=$peso/($altura*$altura);
-    print"Seu nome é $nome, seu peso atual é $peso kg e altura $altura m, seu IMC é $imc\n";
+    printf("Seu nome é %s, seu peso atual é %dkg e altura %.2fm, seu IMC é %.2f\n",
+                     $nome,                 $peso,       $altura,          $imc);
 }
+
+
+// string = %s
+// int = %d
+// float = %f
 ?>
