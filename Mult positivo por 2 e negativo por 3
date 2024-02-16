@@ -1,0 +1,17 @@
+<?php
+
+$num=readline("Informe um número:");
+
+    if($num==0)
+    print"0 é neutro";
+    elseif($num<0)
+    {
+    $mult=$num*3;
+    print"Ele é negativo e seu triplo é " . $mult;
+    }
+    else
+    {
+    $mult=$num*2;
+    print"Ele é positivo e seu dobro é ". $mult;
+    }
+?>
