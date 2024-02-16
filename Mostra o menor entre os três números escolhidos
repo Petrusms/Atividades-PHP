@@ -1,0 +1,14 @@
+<?php
+
+$n1=readline("Informe um número:");
+$n2=readline("Informe o número dois:");
+$n3=readline("Informe o número três:");
+
+if($n1<$n2 and $n1<$n3)
+print"O menor número é ". $n1;
+elseif($n2<$n1 and $n2<$n3)
+print"O menor número é ". $n2;
+else
+print"O menor número é ". $n3;
+
+?>
