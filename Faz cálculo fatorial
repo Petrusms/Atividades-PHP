@@ -10,7 +10,9 @@ function fatorial($num){
 
 do {
     $num=readline("Informe um valor para fazer o fatorial:");
+    if($num!=0){
         $valor=fatorial($num);
         print("O valor da fatoração é $valor \n");
+    }
 } while($num != 0);
 ?>
