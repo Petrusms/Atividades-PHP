@@ -1,0 +1,30 @@
+<?php
+
+$muda=0;
+$num=5;
+
+while($num>1){
+    if($muda==0){
+        $num=readline("Informe um número:");
+        if($num>1)
+        verif($num);
+        $muda=1;
+    }
+    else if($muda==1){
+        $num=readline("Informe um número:(Para parar digite 2 ou menor)");
+        if($num>1)
+        verif($num);
+    }
+}
+
+function verif($num)
+{
+    if($num==2 or $num==3 or $num==5){
+        print("O número $num é um número primo\n");
+    }else
+        if($num%2==0 or $num%3==0 or $num%5==0)
+            print("O número $num não é um número primo\n");
+        else
+            print("O número $num é um número primo\n");
+}
+?>
