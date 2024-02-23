@@ -1,0 +1,16 @@
+<?php
+
+function fatorial($num){
+  $valor=1;
+    for($i=$num; $i>=1; $i--){
+        $valor*=$i;
+    }
+    return $valor;
+}
+
+do {
+    $num=readline("Informe um valor para fazer o fatorial:");
+        $valor=fatorial($num);
+        print("O valor da fatoração é $valor \n");
+} while($num != 0);
+?>
