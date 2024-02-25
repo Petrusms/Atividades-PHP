@@ -1,0 +1,13 @@
+<?php
+
+function mediapon($a,$b,$c){
+    $resul=(($a*3)+($b*5)+($c*2))/10;
+    return $resul;
+}
+
+$a=readline("Informe o 1° valor para fazer a média ponderada: ");
+$b=readline("Informe o 2° valor para fazer a média ponderada: ");
+$c=readline("Informe o 3° valor para fazer a média ponderada: ");
+$resul=mediapon($a,$b,$c);
+print("O resultadp dessa média ponderada é $resul");
+?>
