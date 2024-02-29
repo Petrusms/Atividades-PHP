@@ -19,6 +19,7 @@ function verif($num)
 {
     if ($num%2==1) {
         return false;
+        //impar
     } else {
         return true;
         //par
