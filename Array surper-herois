@@ -1,0 +1,28 @@
+<?php
+ $heros = array("Batman", "Super-man", "Pantera Negra","Spider-man", "Iron-man");
+ $villains = array("Coringa", "Lex_Luthor", "Erik_Killmonger", "Duende verde", "O Mandarim");
+ $food = array("Nachos", "Bife", "Comida_tailandesa", "Bolos nutritivos da tia", "Cheeseburgers");
+ $color = array("Preto", "Azul", "Preto", "Azul e Vermelho", "Vermelho e Dourado");
+ $main = array("Alfred Pennyworth,", "LoisLane", "Shuri", "Tia May", "Pepper Potts");
+
+ print("Herois: ");
+ for($i=0; $i<count($heros); $i++){
+    print($villains[$i]. " | ");
+ }
+ print("\nVilões: ");
+ for($i=0; $i<count($villains); $i++){
+    print($heros[$i]. " | ");
+ }
+ print("\nComida favorita: ");
+ for($i=0; $i<count($food); $i++){
+    print($food[$i]. " | ");
+ }
+ print("\nCor farvorita: ");
+ for($i=0; $i<count($color); $i++){
+    print($color[$i]. " | ");
+ }
+ print("\nPessoa mais importante: ");
+ for($i=0; $i<count($main); $i++){
+    print($main[$i]. " | ");
+ }
+?>
