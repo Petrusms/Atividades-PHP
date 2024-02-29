@@ -5,10 +5,15 @@ function verif($num)
     if ($num%2==1){
         return false;
         //impar
-
+    }
+        else{
         return true;
         //par
     }
+
+    //ou
+
+    //return ($num%2==0);
 }
 
 do{
