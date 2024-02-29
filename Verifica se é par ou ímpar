@@ -1,0 +1,27 @@
+<?php
+
+do{
+ $num = readline("Informe um número(Digite 0 número 0 para parar :): ");
+    if ($num > 0) {
+        $resultado = verif($num);
+        if ($resultado) {
+            print("O número $num é um número par\n");
+        } else {
+            print("O número $num é um número impar\n");
+        }
+    } else {
+        break;
+    }
+
+}while($num!=0);
+
+function verif($num)
+{
+    if ($num%2==1) {
+        return false;
+    } else {
+        return true;
+        //par
+    }
+}
+?>
