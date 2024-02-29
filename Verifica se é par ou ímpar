@@ -1,5 +1,16 @@
 <?php
 
+function verif($num)
+{
+    if ($num%2==1){
+        return false;
+        //impar
+
+        return true;
+        //par
+    }
+}
+
 do{
  $num = readline("Informe um número(Digite 0 número 0 para parar :): ");
     if ($num > 0) {
@@ -14,15 +25,4 @@ do{
     }
 
 }while($num!=0);
-
-function verif($num)
-{
-    if ($num%2==1) {
-        return false;
-        //impar
-    } else {
-        return true;
-        //par
-    }
-}
 ?>
