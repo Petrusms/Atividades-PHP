@@ -1,0 +1,18 @@
+<?php
+
+$user=array();
+$vazio=array();
+
+print("Informe 5 palavras.\n");
+for($i=1; $i<6; $i++){
+
+    $pal=readline("Informe a ".$i."°: ");
+    array_push($user, $pal);
+}
+
+foreach($user as $palavras){
+    array_push($vazio, $palavras);
+}
+
+print implode(",", $vazio);
+?>
