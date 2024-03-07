@@ -1,0 +1,42 @@
+<?php
+
+$veta=array();
+$vetb=array();
+$vetc=array();
+$vetd=array();
+
+print("Informe 5 números para o vetor A.\n");
+for($i=1; $i<6; $i++){
+
+    $move=readline("Informe a ".$i."°: ");
+    array_push($veta, $move);
+}
+
+print("Informe 5 números para o vetor B.\n");
+for($i=1; $i<6; $i++){
+
+    $move=readline("Informe a ".$i."°: ");
+    array_push($vetb, $move);
+}
+
+foreach($veta as $comparar){
+    foreach($vetb as $confirma){
+        if($comparar==$confirma){
+            array_push($vetc, $confirma);
+        }
+        break;
+    }
+}
+print("A interseção do vetor A e B é igual a: ");
+print implode(",", $vetc);
+
+foreach($veta as $move){
+    array_push($vetd, $move);
+}
+foreach($vetb as $move){
+    array_push($vetd, $move);
+}
+print("A união do vetor A e B é igual a: ");
+print implode(",", $vetd);
+
+?>
