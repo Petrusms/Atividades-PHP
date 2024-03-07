@@ -1,0 +1,29 @@
+<?php
+
+$pessoas=Array();
+
+for($i=1; $i<=5; $i){
+    print("Pessoa número $i °: \n");
+        $pessoa["nome"] = readline("Informe seu nome: ");
+        $pessoa["idade"] = readline("Informe sua idade: ");
+        $pessoa["cidade-natal"] = readline("Informe sua cidade natal: ");
+        $pessoa["profissao"] = readline("Informe sua profissão: ");
+
+        array_push($pessoas, $pessoa);
+}
+
+$pessoavelha=$pessoas[0];
+
+foreach($pessoas as $m){
+    if($m["idade"]>$pessoavelha["idade"]){
+        $pessoavelha=$m;
+    }
+}
+
+print("Dados da pessoa mais velha: \n");
+print("Nome: ". $pessoavelha["nome"]);
+print("Idade: ". $pessoavelha["idade"]);
+print("Cidade Natal: ". $pessoavelha["cidade-natal"]);
+print("Profissão: ". $pessoavelha["profissao"]);
+
+?>
