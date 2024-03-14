@@ -1,0 +1,28 @@
+<?php
+
+$num = 5;
+$array_primo=array();
+
+while ($num > 0) {
+    $num = readline("Informe um número(Digite 0 para parar :): ");
+    if ($num > 0) {
+        $resultado = verif($num);
+        if ($resultado) {
+            array_push($array_primo, $num);
+        } 
+    } else {
+        break;
+    }
+}
+print("Os números primos são: ");
+print implode(",", $array_primo);
+
+function verif($num)
+{
+    for($p=2; $p<=$num-1; $p++){
+        if($num % $p == 0)
+            return false;
+    }
+    return true;
+}
+?>
