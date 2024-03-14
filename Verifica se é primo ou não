@@ -20,7 +20,7 @@ function verif($num)
 {
     if ($num == 2 || $num == 3 || $num == 5) {
         return true;
-    } else if ($num % 2 == 0 || $num % 3 == 0 || $num % 5 == 0) {
+    } else if ($num % 2 == 0 || $num % 3 == 0 || $num % 5 == 0 || $num % 7 ==0 || $num % 11 == 0) {
         return false;
         //nao primo
     } else {
