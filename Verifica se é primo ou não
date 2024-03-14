@@ -18,14 +18,11 @@ while ($num > 1) {
 
 function verif($num)
 {
-    if ($num == 2 || $num == 3 || $num == 5 || $num % 7 ==0 || $num % 11 == 0) {
-        return true;
-    } else if ($num % 2 == 0 || $num % 3 == 0 || $num % 5 == 0 || $num % 7 ==0 || $num % 11 == 0) {
-        return false;
-        //nao primo
-    } else {
-        return true;
-        //primo
-    }
+    for($p=2; $p<=$num-1; $p++){
+        if($num % $p == 0)
+            return false;
+        }
+    return true;
+
 }
 ?>
