@@ -1,20 +1,21 @@
 <?php
 
 $num = 5;
+$array_primo=array();
 
-while ($num > 1) {
-    $num = readline("Informe um número(Digite um número abaixo de 2 para parar :): ");
-    if ($num > 1) {
+while ($num > 0) {
+    $num = readline("Informe um número(Digite 0 para parar :): ");
+    if ($num > 0) {
         $resultado = verif($num);
         if ($resultado) {
-            print("O número $num é um número primo\n");
-        } else {
-            print("O número $num não é um número primo\n");
-        }
+            array_push($array_primo, $num);
+        } 
     } else {
         break;
     }
 }
+print("Os números primos são: ");
+print implode(",", $array_primo);
 
 function verif($num)
 {
@@ -23,7 +24,7 @@ function verif($num)
     for($p=2; $p<=$num-1; $p++){
         if($num % $p == 0)
             return false;
-        }
+    }
     return true;
 }
 ?>
