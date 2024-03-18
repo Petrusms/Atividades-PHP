@@ -1,4 +1,11 @@
 <?php
+
+function imprimeVetor($vet) {
+    foreach($vet as $v) 
+        echo $v . "|";
+    echo "\n";
+}
+
  $heros = array("Batman", "Super-man", "Pantera Negra","Spider-man", "Iron-man");
  $villains = array("Coringa", "Lex_Luthor", "Erik_Killmonger", "Duende verde", "O Mandarim");
  $food = array("Nachos", "Bife", "Comida_tailandesa", "Bolos nutritivos da tia", "Cheeseburgers");
@@ -25,4 +32,13 @@
  for($i=0; $i<count($main); $i++){
     print($main[$i]. " | ");
  }
+
+ //ou 
+
+ imprimeVetor($heros);
+ imprimeVetor($villians);
+ imprimeVetor($food);
+ imprimeVetor($color);
+ imprimeVetor($main)
+
 ?>
