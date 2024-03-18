@@ -1,0 +1,15 @@
+<?php
+
+$numbers=array();
+$vet1=array();
+$vet2=array();
+$vet3=array();
+
+print("Digite 5 números:");
+for ($i=1; $i < 6; $i++) { 
+    $num=readline("Digite o $i: ");
+    $numbers[]=$num;
+}
+
+
+?>
