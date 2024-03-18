@@ -1,33 +1,24 @@
 <?php
 
-$vet=array();
-$vetcomp=array();
+$numbers = array();
 
 print("Informe 10 números para por no vetor.\n");
-for($i=1; $i<11; $i++){
+for ($i = 1; $i < 11; $i++) {
+    $number = (int) readline("Digite o número " . $i . ": ");
+    $numbers[] = $number;
+}
 
-    $move=readline("Informe a ".$i."°: ");
-    array_push($vet, $move);
-}
-foreach($vet as $move){
-    array_push($vetcomp, $move);
-}
-foreach($vet as $comparar){
-    foreach($vetcomp as $confirma){
-        if($comparar>$confirma ){
-            $vmaior=$comparar;
-        }
-        break;
+$min = $numbers[0];
+$max = $numbers[0];
+
+foreach ($numbers as $num) {
+    if ($num < $min) {
+        $min = $num;
+    }
+    if ($num > $max) {
+        $max = $num;
     }
 }
 
-foreach($vetcomp as $comparar){
-    foreach($vet as $confirma){
-        if($comparar<$confirma ){
-            $vmenor=$comparar;
-        }
-        break;
-    }
-}
-print("O maior número é igual a: $vmaior, e o menor é: $vmenor\n")
+print("O maior é $max e o menor é $min")
 ?>
