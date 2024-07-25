@@ -3,14 +3,15 @@
 class Animal{
 
     public $nome;
-    public $patas;
-    public $pele;
+    public $especie;
+    public $numPatas;
+    public $tipoPele;
     public $tipo;
-    public $movimento;
+    public $tipoMovimento;
     public $som;
 
     function representacao(){
-        print("A especie do animal é ".$this->nome.", possui ".$this->patas.", tem ".$this->pele.", é ".$this->tipo.", ele se movimenta pelo ".$this->movimento.", e faz emite esse som: ".$this->som."\n");
+        print("O nome do animal é ".$this->nome.", possui ".$this->numPatas.", tem ".$this->tipoPele.", é ".$this->tipo.", ele se movimenta pelo ".$this->tipoMovimento.", e faz emite esse som: ".$this->som."\n");
     }
 
 }
@@ -18,10 +19,10 @@ class Animal{
 for($i=0; $i<5; $i++){
     $animal = new Animal();
     $animal -> nome = readline("Qual o nome do animal? ");
-    $animal -> patas = readline("Quantas patas ele possui? ");
-    $animal -> pele = readline("Qual é p tipo de pelo dele?(Pelos ou penas) ");
+    $animal -> numPatas = readline("Quantas patas ele possui? ");
+    $animal -> tipoPele = readline("Qual é p tipo de pelo dele?(Pelos ou penas) ");
     $animal -> tipo = readline("Ele é herbívoro, carnívoro ou onívero? ");
-    $animal -> movimento = readline("Ele se movimenta pelo chão, água ou ar? ");
+    $animal -> tipoMovimento = readline("Ele se movimenta pelo chão, água ou ar? ");
     $animal -> som = readline("Que tipo de som ele emite? ");
     $animal -> representacao();
 }
