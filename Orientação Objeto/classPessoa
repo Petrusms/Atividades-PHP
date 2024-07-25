@@ -1,0 +1,32 @@
+<?php
+
+class Pessoa{
+
+    public $nome;
+    public $endereço;
+    public $cidade;
+    public $UF;
+    public $altura;
+
+    function falarOla(){
+        print("Olá mundo, e olá ".$this->nome."\n");
+    }
+    function falarEndereco(){
+        print("Moro em ".$this->endereço.",". $this->cidade."/".$this->UF."\n");
+    }
+    function falarAltura(){
+        print("Tenho ". $this->altura ." metros!");
+    }
+}
+ 
+$pessoa = new Pessoa();
+$pessoa -> nome = readline("Qual o seu nome? \n");
+$pessoa -> endereço = readline("Qual seu endereço? \n");
+$pessoa -> cidade = readline("Qual sua cidade? \n");
+$pessoa -> UF = readline("Qual sua Unidade federativa(UF)? \n");
+$pessoa -> altura = readline("Qual sua altura? \n");
+$pessoa -> falarOla();
+$pessoa -> falarEndereco();
+$pessoa -> falarAltura();
+
+?>
