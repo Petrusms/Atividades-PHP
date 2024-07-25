@@ -1,0 +1,52 @@
+<?php
+
+class Retangulo{
+
+    public $base;
+    public $altura;
+
+    function perimetro(){
+        $val = 2*($this->base+$this->altura);
+        return $val;
+    }
+    function area(){
+        $valor = $this->base*$this->altura;
+        return $valor;
+    }
+
+    //ou
+
+    //function __construct($b,$a){
+    //    $this->base = $b;
+    //    $this->altura = $a;
+    //}
+}
+
+$retangulo1 = new Retangulo();
+$retangulo1 -> base = readline("Qual a base do seu retângulo? ");
+$retangulo1 -> altura = readline("Qual a altura do seu retângulo? ");
+$val1=$retangulo1 -> perimetro();
+$valor1=$retangulo1 -> area();
+print("O perimetro do seu retângulo é: $val1, a área é: $valor1.\n");
+
+$retangulo2 = new Retangulo();
+$retangulo2 -> base = readline("Qual a base do seu retângulo? ");
+$retangulo2 -> altura = readline("Qual a altura do seu retângulo? ");
+$val2=$retangulo2 -> perimetro();
+$valor2=$retangulo2 -> area();
+print("O perimetro do seu retângulo é: $val2, a área é: $valor2.\n");
+
+$retangulo3 = new Retangulo();
+$retangulo3 -> base = readline("Qual a base do seu retângulo? ");
+$retangulo3 -> altura = readline("Qual a altura do seu retângulo? ");
+$val3=$retangulo3 -> perimetro();
+$valor3=$retangulo3 -> area();
+print("O perimetro do seu retângulo é: $val3, a área é: $valor3.\n");
+
+//ou com construct
+//$retangulo4 = new Retangulo(2,3);
+//$val4=$retangulo4 -> perimetro();
+//$valor4=$retangulo4 -> area();
+//print("O perimetro do seu retângulo é: $val4, a área é: $valor4.\n");
+
+?>
