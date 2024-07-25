@@ -1,0 +1,44 @@
+<?php
+
+class Monitor{
+
+    //Atributos
+    public $cor;
+    public $resolucao;
+    public $marca;
+    public $tempoResposta;
+
+    //Metodos
+    function li(){
+        print("Ligando...\n");
+    }
+    function de(){
+        print("Desligado...\n");
+    }
+    function moim(){
+        print("Mostrando imagem em resolução".$this->resolucao."\n");
+    }
+
+}
+    //Programa principal
+    $monitor1 = new Monitor();
+    $monitor1->cor = "Preto";
+    $monitor1->resolucao = "1920x1080";
+    $monitor1->marca = "AOC";
+    $monitor1->tempoResposta = "Lerdo";
+    $monitor1->li();
+    $monitor1->moim();
+    $monitor1->de();
+    print("Cor do monitor 1: ".$monitor1->cor."\n" );
+  
+
+    $monitor2 = new Monitor();
+    $monitor2->cor = "Preto";
+    $monitor2->resolucao = "19211111110x1080";
+    $monitor2->marca = "AOC";
+    $monitor2->tempoResposta = "Veloz";
+    $monitor2->li();
+    $monitor2->moim();
+    $monitor2->de();
+  
+?>
