@@ -9,7 +9,7 @@ class Pessoa{
     public $altura;
 
     function falarOla(){
-        print("Olá mundo, e olá ".$this->nome."\n");
+        print("Olá mundo, sou ".$this->nome."\n");
     }
     function falarEndereco(){
         print("Moro em ".$this->endereço.",". $this->cidade."/".$this->UF."\n");
