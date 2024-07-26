@@ -1,1 +1,27 @@
+<?php
 
+class Pokemon {
+
+    public $nome;
+    public $tipo;
+    public $classe;
+    public $sexo;
+    public $hp;
+    public $def;
+    public $atq;
+    public $vel;
+    public $altura;
+    public $peso;
+    public $numPokedex;
+    public $categoria;
+    public $abilidade;
+    public $fraquezas;
+
+    function mostrarDados(){
+
+    }
+
+    function batalhar(){}
+
+}
+?>
