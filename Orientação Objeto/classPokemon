@@ -30,35 +30,39 @@ class Pokemon {
     public $num;
 
     function mostrarDados(){
-        print("Seu nome é ". $this->nome .", é do tipo ". $this -> tipo .", seu sexo é ". $this -> sexo .", é da classe ". $this -> classe .", sua altura é ". $this -> altura ." e seu peso é ". $this -> peso .", seu número na pokedex é: ". $this -> numPokedex .", sua categoria é: ". $this -> categoria .", sua abilidade principal é: ". $this -> abilidade .", e a sua fraqueza é do tipo: ". $this -> fraqueza .", seu pokemon está no nível ". $this -> nivel ." epossui um hp de: ". $this -> hp .", defesa de: ". $this -> def .", velocidade de: ". $this -> vel .", e ataque de: ". $this -> atq .".\n");
+        print("Seu nome é ". $this->nome .", é do tipo ". $this -> tipo .", seu sexo é ". $this -> sexo .", é da classe ". $this -> classe .", sua altura é ". $this -> altura ." e seu peso é ". $this -> peso .", seu número na pokedex é: ". $this -> numPokedex .", sua categoria é: ". $this -> categoria .", sua abilidade principal é: ". $this -> abilidade .", e a sua fraqueza é do tipo: ". $this -> fraqueza .", seu pokemon está no nível ". $this -> nivel ." e possui um hp de: ". $this -> hp .", defesa de: ". $this -> def .", velocidade de: ". $this -> vel .", e ataque de: ". $this -> atq .".\n");
     }
 
     function batalhar(){
         if($this -> num == 1){
-            print("Seu pokemon ". $this -> nome ." ganhou a batalha, mas sofreu graves danos, deixando-o com o HP muito baixo.");
+            print("Seu pokemon ". $this -> nome ." ganhou a batalha, mas sofreu graves danos, deixando-o com o HP muito baixo.\n");
         } else{
-            print("Seu pokemon ". $this -> nome ." perdeu a batalha pois o adversário era counter do seu pokemon");
+            print("Seu pokemon ". $this -> nome ." perdeu a batalha pois o adversário era counter do seu pokemon.\n");
         }
     }
 
     function aumetarNivel(){
-
+        if($this -> nivel == 100){
+            print("Seu pokemon está no lvl máximo!\n");
+        } else {
+            print("Seu pokemon subiu de nivel e foi para o lvl". 1 + $this -> nivel ."!\n");
+        }
     }
 
     function aumentarHP(){
-
+        print("Você utilizou uma poção, que alem de recuperar o HP tambem o aumentou, indo de ". $this -> hp ." para ".  50 + $this -> hp ."!\n");
     }
 
     function aumentarVel(){
-
+        print("Você utilizou uma fruta, que aumentou sua velocidade, indo de ". $this -> vel ." para ". 60 + $this -> vel ."!\n");
     }
 
     function aumentarDef(){
-
+        print("Você utilizou uma artefato, que aumentou sua defesa, indo de ". $this -> def ." para ".  100 + $this -> def ."!\n");
     }
 
     function aumentarAtq(){
-
+        print("Você utilizou uma pedra, que aumentou seu ataque, indo de ". $this -> atq ." para ".  40 + $this -> atq ."!\n");
     }
 
     function __construct($a,$b,$c,$d,$e,$f,$g,$h,$i,$j,$k,$l,$m,$n,$o,$p)
@@ -82,9 +86,16 @@ class Pokemon {
 
     }
 }
-
-$pokemon = new pokemon('Gengar', 'fantasma e veneno', 'macho', '  normal', '1.5m', '40.5Kg', '94', 'Shadow', 'Corpo Amaldiçoado', 'sombrio, psíquico, terra e fantasma', '50', '60', '60', '110', '130', sortearNumero(1, 2));
+$num = sortearNumero(1, 2);
+$pokemon = new pokemon('Gengar', 'fantasma e veneno', 'macho', '  normal', '1.5m', '40.5Kg', '94', 'Shadow', 'Corpo Amaldiçoado', 'sombrio, psíquico, terra e fantasma', '50', '60', '60', '110', '130', $num);
 $pokemon -> mostrarDados();
-$pokemon = new pokemon('Guzzlord', 'sombrio e dragão', 'desconhecido', 'das Ultra Beasts', '5.5m', '888Kg', '799', 'Junkivore', 'Impulso da Fera', 'gelo, dragão, fada, lutador e inseto','100', '650', '203', '225', '650', sortearNumero(1, 2));
+$pokemon -> batalhar();
+$pokemon -> aumetarNivel();
+$pokemon -> aumentarHP();
+$pokemon -> aumentarVel();
+$pokemon -> aumentarDef();
+$pokemon -> aumentarAtq();
+$num = sortearNumero(1, 2);
+$pokemon = new pokemon('Guzzlord', 'sombrio e dragão', 'desconhecido', 'das Ultra Beasts', '5.5m', '888Kg', '799', 'Junkivore', 'Impulso da Fera', 'gelo, dragão, fada, lutador e inseto','100', '650', '203', '225', '650', $num);
 $pokemon -> mostrarDados();
 ?>
