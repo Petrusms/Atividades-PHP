@@ -34,7 +34,11 @@ class Pokemon {
     }
 
     function batalhar(){
-        
+        if($this -> num == 1){
+            print("Seu pokemon ". $this -> nome ." ganhou a batalha, mas sofreu graves danos, deixando-o com o HP muito baixo.");
+        } else{
+            print("Seu pokemon ". $this -> nome ." perdeu a batalha pois o adversário era counter do seu pokemon");
+        }
     }
 
     function aumetarNivel(){
@@ -57,7 +61,7 @@ class Pokemon {
 
     }
 
-    function __construct($a,$b,$c,$d,$e,$f,$g,$h,$i,$j,$k,$l,$m,$n,$o)
+    function __construct($a,$b,$c,$d,$e,$f,$g,$h,$i,$j,$k,$l,$m,$n,$o,$p)
     {
         $this -> nome = $a;
         $this -> tipo = $b;
@@ -74,14 +78,13 @@ class Pokemon {
         $this -> def = $m;
         $this -> vel = $n;
         $this -> atq = $o;
+        $this -> num = $p;
 
     }
 }
 
-$pokemon = new pokemon('Gengar', 'fantasma e veneno', 'macho', '  normal', '1.5m', '40.5Kg', '94', 'Shadow', 'Corpo Amaldiçoado', 'sombrio, psíquico, terra e fantasma', '50', '60', '60', '110', '130');
-$pokemon -> num = sortearNumero(1, 2);
+$pokemon = new pokemon('Gengar', 'fantasma e veneno', 'macho', '  normal', '1.5m', '40.5Kg', '94', 'Shadow', 'Corpo Amaldiçoado', 'sombrio, psíquico, terra e fantasma', '50', '60', '60', '110', '130', sortearNumero(1, 2));
 $pokemon -> mostrarDados();
-$pokemon = new pokemon('Guzzlord', 'sombrio e dragão', 'desconhecido', 'das Ultra Beasts', '5.5m', '888Kg', '799', 'Junkivore', 'Impulso da Fera', 'gelo, dragão, fada, lutador e inseto','100', '650', '203', '225', '650');
-$pokemon -> num = sortearNumero(1, 2);
+$pokemon = new pokemon('Guzzlord', 'sombrio e dragão', 'desconhecido', 'das Ultra Beasts', '5.5m', '888Kg', '799', 'Junkivore', 'Impulso da Fera', 'gelo, dragão, fada, lutador e inseto','100', '650', '203', '225', '650', sortearNumero(1, 2));
 $pokemon -> mostrarDados();
 ?>
