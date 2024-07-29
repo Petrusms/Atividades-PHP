@@ -1,5 +1,15 @@
 <?php
 
+function sortearNumero($min, $max) {
+    if ($min > $max) {
+        return "O limite inferior deve ser menor ou igual ao limite superior.";
+    }
+
+    $numeroSorteado = rand($min, $max);
+    
+    return $numeroSorteado;
+}
+
 class Pokemon {
 
     public $nome;
@@ -15,13 +25,63 @@ class Pokemon {
     public $numPokedex;
     public $categoria;
     public $abilidade;
-    public $fraquezas;
+    public $fraqueza;
+    public $nivel;
+    public $num;
 
     function mostrarDados(){
+        print("Seu nome é ". $this->nome .", é do tipo ". $this -> tipo .", seu sexo é ". $this -> sexo .", é da classe ". $this -> classe .", sua altura é ". $this -> altura ." e seu peso é ". $this -> peso .", seu número na pokedex é: ". $this -> numPokedex .", sua categoria é: ". $this -> categoria .", sua abilidade principal é: ". $this -> abilidade .", e a sua fraqueza é do tipo: ". $this -> fraqueza .", seu pokemon está no nível ". $this -> nivel ." epossui um hp de: ". $this -> hp .", defesa de: ". $this -> def .", velocidade de: ". $this -> vel .", e ataque de: ". $this -> atq .".\n");
+    }
+
+    function batalhar(){
+        
+    }
+
+    function aumetarNivel(){
 
     }
 
-    function batalhar(){}
+    function aumentarHP(){
 
+    }
+
+    function aumentarVel(){
+
+    }
+
+    function aumentarDef(){
+
+    }
+
+    function aumentarAtq(){
+
+    }
+
+    function __construct($a,$b,$c,$d,$e,$f,$g,$h,$i,$j,$k,$l,$m,$n,$o)
+    {
+        $this -> nome = $a;
+        $this -> tipo = $b;
+        $this -> sexo = $c;
+        $this -> classe = $d;
+        $this -> altura = $e;
+        $this -> peso = $f;
+        $this -> numPokedex = $g;
+        $this -> categoria = $h;
+        $this -> abilidade = $i;
+        $this -> fraqueza = $j;
+        $this -> nivel = $k;
+        $this -> hp = $l;
+        $this -> def = $m;
+        $this -> vel = $n;
+        $this -> atq = $o;
+
+    }
 }
+
+$pokemon = new pokemon('Gengar', 'fantasma e veneno', 'macho', '  normal', '1.5m', '40.5Kg', '94', 'Shadow', 'Corpo Amaldiçoado', 'sombrio, psíquico, terra e fantasma', '50', '60', '60', '110', '130');
+$pokemon -> num = sortearNumero(1, 2);
+$pokemon -> mostrarDados();
+$pokemon = new pokemon('Guzzlord', 'sombrio e dragão', 'desconhecido', 'das Ultra Beasts', '5.5m', '888Kg', '799', 'Junkivore', 'Impulso da Fera', 'gelo, dragão, fada, lutador e inseto','100', '650', '203', '225', '650');
+$pokemon -> num = sortearNumero(1, 2);
+$pokemon -> mostrarDados();
 ?>
