@@ -1,0 +1,91 @@
+<?php 
+
+    class Liquidificador{
+
+        private $cor;
+        private $marca;
+        private $voltagem;
+        private $capacidade;
+
+        public function __construct($a)
+        {
+        $this -> cor = $a;
+        }
+
+        public function ligar(){
+            print("Ligado\n");
+            $this -> girar_motor();
+        }
+
+        public function desligar(){
+            print("Desligado\n");
+            $this-> parar_motor();
+        }
+
+        public function inverter(){
+            print("Giro invertido\n");
+        }
+
+        private function girar_motor(){
+            print("Motor ligado\n");
+        }
+
+        private function parar_motor(){
+            print("Motor desligado\n");
+        }
+
+        public function getCor()
+        {
+                return $this->cor;
+        }
+
+        public function setCor($cor): self
+        {
+                $this->cor = $cor;
+
+                return $this;
+        }
+                                                                    
+        public function getMarca()
+        {
+                return $this->marca;
+        }
+
+        public function setMarca($marca): self
+        {
+                $this->marca = $marca;
+
+                return $this;
+        }
+
+        public function getVoltagem()
+        {
+                return $this->voltagem;
+        }
+
+        public function setVoltagem($voltagem): self
+        {
+                $this->voltagem = $voltagem;
+
+                return $this;
+        }
+
+        public function getCapacidade()
+        {
+                return $this->capacidade;
+        }
+
+        public function setCapacidade($capacidade): self
+        {
+                $this->capacidade = $capacidade;
+
+                return $this;
+        }
+    }
+
+$liqui = new Liquidificador("red");     
+$liqui -> ligar(); 
+print("Acor do liquificador é ". $liqui -> getCor() ."\n")  ;  
+$liqui -> setMarca("linux") ;
+print_r($liqui)         ;              
+?>
