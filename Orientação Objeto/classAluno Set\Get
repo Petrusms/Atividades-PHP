@@ -1,0 +1,75 @@
+<?php 
+
+class Aluno{
+    private $nome;
+    private $nota1;
+    private $nota2;
+
+    function getCalcMedia(){
+         $media = ($this->nota1+$this->nota2)/2;
+         return $media;
+    }
+
+    /**
+     * Get the value of nome
+     */
+    public function getNome()
+    {
+        return $this->nome;
+    }
+
+    /**
+     * Set the value of nome
+     */
+    public function setNome($nome): self
+    {
+        $this->nome = $nome;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of nota1
+     */
+    public function getNota1()
+    {
+        return $this->nota1;
+    }
+
+    /**
+     * Set the value of nota1
+     */
+    public function setNota1($nota1): self
+    {
+        $this->nota1 = $nota1;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of nota2
+     */
+    public function getNota2()
+    {
+        return $this->nota2;
+    }
+
+    /**
+     * Set the value of nota2
+     */
+    public function setNota2($nota2): self
+    {
+        $this->nota2 = $nota2;
+
+        return $this;
+    }
+}
+for($i=0; $i<3; $i++){
+    $aluno = new Aluno();
+    $nome = readline("Qual seu nome?\n");
+    $nota1 = readline("Qual a sua primeira nota?\n");
+    $nota2 = readline("Qual a sua segunda nota?\n");
+    $aluno -> setNome($nome)-> setNota2("$nota2")-> setNota1("$nota1");
+    print("Olá $nome, como sua 1 nota: $nota1, e sua 2 nota: $nota2, sua média foi de:".$aluno->getCalcMedia()."\n");
+}
+?>
