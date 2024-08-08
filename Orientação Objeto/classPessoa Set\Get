@@ -8,7 +8,7 @@ class Pessoa{
     private  $altura;
 
     public function getApresentacao(){
-        return ("Olá mundo, sou ".$this -> getNome().", resido no endereço ".$this -> getEndereco().", ".$this -> getCidade()."-".$this -> getUF()." e possuo uma altura de ".$this -> getAltura()."m !"); 
+        return ("Olá mundo, sou ".$this -> getNome().", resido no endereço ".$this -> getEndereco().", ".$this -> getCidade()."-".$this -> getUF()." e possuo uma altura de ".$this -> getAltura()."m !\n"); 
     }
 
     /**
@@ -102,10 +102,6 @@ class Pessoa{
     }
 }
 $pessoa= new Pessoa();
-$pessoa -> setNome("Paulo");
-$pessoa -> setEndereco("Av. Paulista");
-$pessoa -> setCidade("Boa Vista");
-$pessoa -> setUF("SP");
-$pessoa -> setAltura(2);
+$pessoa -> setNome("Paulo")-> setEndereco("Av. Paulista")-> setCidade("Boa Vista")-> setUF("SP")-> setAltura(2);
 print($pessoa -> getApresentacao());
 ?>
