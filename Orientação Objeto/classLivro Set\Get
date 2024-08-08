@@ -1,0 +1,90 @@
+<?php 
+
+class Livro{
+    private $titulo;  
+    private $autor;
+    private $genero;
+    private $numPag;
+
+    /**
+     * Get the value of titulo
+     */
+    public function getTitulo()
+    {
+        return $this->titulo;
+    }
+
+    /**
+     * Set the value of titulo
+     */
+    public function setTitulo($titulo): self
+    {
+        $this->titulo = $titulo;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of autor
+     */
+    public function getAutor()
+    {
+        return $this->autor;
+    }
+
+    /**
+     * Set the value of autor
+     */
+    public function setAutor($autor): self
+    {
+        $this->autor = $autor;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of genero
+     */
+    public function getGenero()
+    {
+        return $this->genero;
+    }
+
+    /**
+     * Set the value of genero
+     */
+    public function setGenero($genero): self
+    {
+        $this->genero = $genero;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of numPag
+     */
+    public function getNumPag()
+    {
+        return $this->numPag;
+    }
+
+    /**
+     * Set the value of numPag
+     */
+    public function setNumPag($numPag): self
+    {
+        $this->numPag = $numPag;
+
+        return $this;
+    }
+
+}
+
+$livro = new Livro();
+$livro ->setAutor()->setGenero()->setNumPag()->setTitulo();
+
+//Faça um programa que crie uma classe Livro com os atributos título, autor,
+//gênero e número de páginas. Depois, crie 3 objetos do tipo livro e leia todos os
+//seus atributos. Após isso, imprima os dados do livro com maior número de
+//páginas.
+?>
