@@ -87,4 +87,15 @@ foreach ($carros as $carro) {
 
     print("O carro mais rápido é: " . $carroRapido->getModelo() . " - " . $carroRapido->getMarca() . ", fabricado em " . $carroRapido->getAnoFabricacao() . ", com velocidade máxima de " . $carroRapido->getVelocidadeMax() . " km/h.\n");
 
+$carroLento = null; 
+$minVelocidade = 0;
+
+foreach ($carros as $carro) {
+    if ($carro->getVelocidadeMax() < $carroRapido->getVelocidadeMax()) {
+        $minVelocidade = $carro->getVelocidadeMax();
+        $carroLento = $carro; 
+    }
+}
+
+print("O carro mais lerdo é: " . $carroLento->getModelo() . " - " . $carroLento->getMarca() . ", fabricado em " . $carroLento->getAnoFabricacao() . ", com velocidade máxima de " . $carroLento->getVelocidadeMax() . " km/h.\n");
 ?>
