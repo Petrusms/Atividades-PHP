@@ -79,12 +79,28 @@ class Livro{
     }
 
 }
+$livros=[];
+for($i=0; $i<3; $i++){
+    $livro = new Livro();
+    $livro ->setAutor(readline("Informe o autor desse livro: "))->setGenero(readline("Me fale o gênero desse livro: "))->setNumPag(readline("Me fale a quantidade de paginas desse livro: "))->setTitulo(readline("Me fale o titulo desse livro: "));
 
-$livro = new Livro();
-$livro ->setAutor()->setGenero()->setNumPag()->setTitulo();
+    $livros[]=$livro;
+}
 
-//Faça um programa que crie uma classe Livro com os atributos título, autor,
-//gênero e número de páginas. Depois, crie 3 objetos do tipo livro e leia todos os
-//seus atributos. Após isso, imprima os dados do livro com maior número de
-//páginas.
+$livroComMaisPaginas = 0;
+$maxPaginas = 0;
+
+foreach ($livros as $livro) {
+    if ($livro->getNumPag() > $maxPaginas) {
+        $maxPaginas = $livro->getNumPag();
+        $livroComMaisPaginas = $livro;
+    }
+}
+
+    print("O livro com mais páginas possui:\n");
+    print("Título: " . $livroComMaisPaginas->getTitulo() . "\n");
+    print("Autor: " . $livroComMaisPaginas->getAutor() . "\n");
+    print("Gênero: " . $livroComMaisPaginas->getGenero() . "\n");
+    print("Número de Páginas: " . $livroComMaisPaginas->getNumPag() . "\n");
+
 ?>
