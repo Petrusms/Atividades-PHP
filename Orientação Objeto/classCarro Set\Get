@@ -1,0 +1,90 @@
+<?php 
+
+class Carro {
+    private $modelo;
+    private $marca;
+    private $anoFabricacao;  
+    private $velocidadeMax;   
+
+    /**
+     * Get the value of modelo
+     */
+    public function getModelo(): string {
+        return $this->modelo;
+    }
+
+    /**
+     * Set the value of modelo
+     */
+    public function setModelo(string $modelo): self {
+        $this->modelo = $modelo;
+        return $this;
+    }
+
+    /**
+     * Get the value of marca
+     */
+    public function getMarca(): string {
+        return $this->marca;
+    }
+
+    /**
+     * Set the value of marca
+     */
+    public function setMarca(string $marca): self {
+        $this->marca = $marca;
+        return $this;
+    }
+
+    /**
+     * Get the value of anoFabricacao
+     */
+    public function getAnoFabricacao(): int {
+        return $this->anoFabricacao;
+    }
+
+    /**
+     * Set the value of anoFabricacao
+     */
+    public function setAnoFabricacao(int $anoFabricacao): self {
+        $this->anoFabricacao = $anoFabricacao;
+        return $this;
+    }
+
+    /**
+     * Get the value of velocidadeMax
+     */
+    public function getVelocidadeMax(): int {
+        return $this->velocidadeMax;
+    }
+
+    /**
+     * Set the value of velocidadeMax
+     */
+    public function setVelocidadeMax(int $velocidadeMax): self {
+        $this->velocidadeMax = $velocidadeMax;
+        return $this;
+    }
+}
+
+$carros = [];
+for ($i=0; $i<3; $i++) {
+    $carro = new Carro();
+    $carro->setModelo(readline("Qual é o modelo do seu carro? "))->setMarca(readline("Qual a marca dele? "))->setAnoFabricacao((int)readline("Qual o ano em que foi fabricado? "))->setVelocidadeMax((int)readline("Qual a velocidade máxima que já atingiu? "));
+
+    $carros[] = $carro; 
+}
+
+$carroRapido = 0; 
+$maxVelocidade = 0;
+
+foreach ($carros as $carro) {
+    if ($carro->getVelocidadeMax() > $maxVelocidade) {
+        $maxVelocidade = $carro->getVelocidadeMax();
+        $carroRapido = $carro; 
+    }
+}
+
+    print("O carro mais rápido é: " . $carroRapido->getModelo() . " - " . $carroRapido->getMarca() . ", fabricado em " . $carroRapido->getAnoFabricacao() . ", com velocidade máxima de " . $carroRapido->getVelocidadeMax() . " km/h.\n");
+
+?>
