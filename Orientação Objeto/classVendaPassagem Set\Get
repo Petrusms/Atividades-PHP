@@ -1,0 +1,57 @@
+<?php 
+
+class Veiculo{
+
+    private int $capacidade;
+    private int $passagemVendida;
+
+    /**
+     * Get the value of capacidade
+     */
+    public function getCapacidade(): int
+    {
+        return $this->capacidade;
+    }
+
+    /**
+     * Get the value of passagemVendida
+     */
+    public function getPassagemVendida(): int
+    {
+        return $this->passagemVendida;
+    }
+
+    public function __construct(int $capacidade) {
+        $this->capacidade = $capacidade;
+        $this->passagemVendida = 0;
+    }
+
+    public function venderPassagem($quantidade) {
+        if ($this->passagemVendida + $quantidade > $this->capacidade) {
+            print "Não foi possível vender $quantidade passagens. Capacidade máxima atingida!\n";
+            return false;
+        }else{
+            $this->passagemVendida += $quantidade;
+            print "Passagem(ns) vendida(s) com sucesso!\n";
+            return true;
+        }
+    }
+}
+
+$capacidade = (int)readline("Digite a capacidade do veículo: ");
+
+$veiculo = new Veiculo($capacidade);
+
+    while (true) {
+        $quantidade = (int)readline("Digite a quantidade de passagens a comprar (ou 0 para sair): ");
+
+        if ($quantidade == 0) {
+           print "Saindo do programa...\n";
+            break;
+        }
+
+        if ($veiculo->venderPassagem($quantidade)) {
+            print "Total de passagens vendidas: ". $veiculo->getPassagemVendida() ."\n";
+        }
+    }
+?>
