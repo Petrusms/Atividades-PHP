@@ -1,0 +1,12 @@
+<?php
+
+$media=0;
+$num = array(0,);
+for($i=1; $i<11; $i++){
+    $nu=readline("\nInforme o ".$i."° número: ");
+    array_push($num, $nu);
+    $media=$num[$i]+$media;
+}
+print("A média aritmética é igual a ".$media/10);
+?>
+
