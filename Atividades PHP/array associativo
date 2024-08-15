@@ -1,1 +1,36 @@
+<?php
+
+// Dados da tabela organizados em um array associativo
+$dados = array(
+    array(
+        "Nome" => "Manuel de Medeiros",
+        "Endereço" => "Rua das Acácias",
+        "Cidade" => "Foz do Iguaçu",
+        "UF" => "PR"
+    ),
+    array(
+        "Nome" => "Juliana de Amaral",
+        "Endereço" => "Rua dos Pinheiros",
+        "Cidade" => "Florianópolis",
+        "UF" => "SC"
+    ),
+    array(
+        "Nome" => "Rodrigo Baidek",
+        "Endereço" => "Rua Dom Pedro I",
+        "Cidade" => "Petrópolis",
+        "UF" => "RJ"
+    ),
+    array(
+        "Nome" => "Fabíola da Silva",
+        "Endereço" => "Rua Chile",
+        "Cidade" => "Guarulhos",
+        "UF" => "SP"
+    )
+);
+
+// Mostrar os valores em linhas com os dados separados por |
+foreach ($dados as $pessoa) {
+    echo implode(" | ", $pessoa) . "\n";
+}
+?>
 
