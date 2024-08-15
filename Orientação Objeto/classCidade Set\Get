@@ -1,0 +1,104 @@
+<?php
+
+class Cidade{
+    private $populacao;
+    private $nome;
+    private $area;
+
+    /**
+     * Get the value of populacao
+     */
+    public function getPopulacao()
+    {
+        return $this->populacao;
+    }
+
+    /**
+     * Set the value of populacao
+     */
+    public function setPopulacao($populacao): self
+    {
+        $this->populacao = $populacao;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of nome
+     */
+    public function getNome()
+    {
+        return $this->nome;
+    }
+
+    /**
+     * Set the value of nome
+     */
+    public function setNome($nome): self
+    {
+        $this->nome = $nome;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of area
+     */
+    public function getArea()
+    {
+        return $this->area;
+    }
+
+    /**
+     * Set the value of area
+     */
+    public function setArea($area): self
+    {
+        $this->area = $area;
+
+        return $this;
+    }
+
+    public function aumentarPopulação(){
+        $num=readline("Você deseja aumentar(1) ou deixar com esta(2)? \n");
+        if($num==1){
+            $aumento=readline("Informe em quantos porcentos ira querer aumentar a população?\n");
+            $aumento= $this->getPopulacao() *(1+($aumento/100));
+            return $aumento;
+        }else{
+            return $this->getPopulacao();
+        }
+    }
+
+    public function mudarNome(){
+        $num=readline("Você vai querer mudar o nome?(Digite 1 para sim e 2 para não)");
+        if($num==1){
+            $nome=readline("Informe o novo nome: \n");
+            return $nome;
+        } else{
+            return $this->getNome();
+        }
+    }
+
+    public function expandirReduzirArea(){
+        $num=readline("Você deseja expandir(1), reduzir(2) ou deixar como esta(3)? \n");
+        if($num==1) {
+            $aumento=readline("Informe quanto que deseja expandir em quantos porcentos? \n");
+            $aumento=$this->area*(1+($aumento/100));
+            return $aumento;
+        }else if ($num==2) {
+            $diminui=readline("Informe quanto que deseja diminuir em quantos porcentos? \n");
+            $diminui=$this->area*($diminui/100);
+            return $diminui;
+        } 
+        else{
+            return $this->getArea();
+        }
+    }
+}
+for($i=0; $i<2; $i++){
+    $cidade = new Cidade();
+    $cidade->setPopulacao(readline("Informe o número da população: \n"))->setNome(readline("Informe o nome dessa população: \n"))->setArea(readline("Informe a área dessa população: \n"));
+    print("A população aumentou para".$cidade->aumentarPopulação().", o nome mudou para ".$cidade->mudarNome().", e a area ".$cidade->expandirReduzirArea()."km²\n");
+}
+?>
