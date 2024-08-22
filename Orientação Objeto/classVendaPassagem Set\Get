@@ -36,11 +36,21 @@ class Veiculo{
             return true;
         }
     }
+
+    public function getPassagemDisponiveis(){
+        return $disponiveis= $this->capacidade - $this->passagemVendida;
+    }
+
+    public function __toString()
+    {
+        return print("Capacidade: ".$this->capacidade);
+    }
 }
 
 $capacidade = (int)readline("Digite a capacidade do veículo: ");
 
 $veiculo = new Veiculo($capacidade);
+print "Passagem disponiveis: ". $veiculo->getPassagemDisponiveis()."\n ";
 
     while (true) {
         $quantidade = (int)readline("Digite a quantidade de passagens a comprar (ou 0 para sair): ");
@@ -51,7 +61,8 @@ $veiculo = new Veiculo($capacidade);
         }
 
         if ($veiculo->venderPassagem($quantidade)) {
-            print "Total de passagens vendidas: ". $veiculo->getPassagemVendida() ."\n";
+            print "$veiculo | Passagens vendidas: ". $veiculo->getPassagemVendida()."\n";
+            print "Passagem disponiveis: ". $veiculo->getPassagemDisponiveis()."\n ";
         }
     }
 ?>
