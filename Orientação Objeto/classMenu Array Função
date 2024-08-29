@@ -88,110 +88,13 @@ while(true){
             break;
             
         case 2:
-            listar($dados);
-            break;
-
-        case 0:
-            print("Programa encerrado...");
-            return true;
-        
-        default: 
-            print("Opção invalida!\n");
-
-    }
-}
-?><?php
-class Pessoa{
-    private string $nome;
-    private string $sobrenome;
-    private int $idade;
-
-    public function __toString(){
-        return "Nome: ".$this->nome." Sobrenome: ".$this->sobrenome." Idade: .".$this->idade;
-    }
-    
-    /**
-     * Get the value of nome
-     */
-    public function getNome(): string
-    {
-        return $this->nome;
-    }
-
-    /**
-     * Set the value of nome
-     */
-    public function setNome(string $nome): self
-    {
-        $this->nome = $nome;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of sobrenome
-     */
-    public function getSobrenome(): string
-    {
-        return $this->sobrenome;
-    }
-
-    /**
-     * Set the value of sobrenome
-     */
-    public function setSobrenome(string $sobrenome): self
-    {
-        $this->sobrenome = $sobrenome;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of idade
-     */
-    public function getIdade(): int
-    {
-        return $this->idade;
-    }
-
-    /**
-     * Set the value of idade
-     */
-    public function setIdade(int $idade): self
-    {
-        $this->idade = $idade;
-
-        return $this;
-    }
-}
-
-    function cadastro($menu){
-    $menu->setNome(readline("Informe apenas o nome: \n"));
-    $menu->setSobrenome(readline("Informe apenas o sobrenome: \n"));
-    $menu->setIdade(readline("Informe a idade: \n"));
-    return $menu;
-}
-
-    function listar($dados){
-    foreach($dados as $dado){
-        print(" Nome: ".$dado->getNome()."\n Sobrenome: ".$dado->getSobrenome()."\n Quant.Aluno: ".$dado->getIdade()."\n");
-    }
-}
-
-$dados = [];
-
-while(true){
-    $num=readline("O que deseja fazer?(\n1: Cadastrar\n ,2: Listar\n ,0: Encerrar o pragrama)\n");
-
-    switch($num){
-        case 1:
-            $menu = new Pessoa();
-            array_push($dados, cadastro($menu));
-            break;
-            
-        case 2:
-            listar($dados);
-            break;
+            if(count($dados)>0){
+                listar($dados);
+                break;
+            } else {
+                print("Não pessoas cadastradas!!!\n");
+                break;
+            }
 
         case 0:
             print("Programa encerrado...");
