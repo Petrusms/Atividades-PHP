@@ -4,6 +4,11 @@ class Escola{
     private $endereco;
     private $quantAlunos;
 
+    public function __toString()
+    {
+        return $this-> nome . "-" . $this->endereco . "-" .$this->quantAlunos;
+    }
+
     /**
      * Get the value of nome
      */
@@ -59,12 +64,30 @@ class Escola{
     }
 }
 
-$alunos = [];
+$alunos = array();
 
-    for($i=0; $i<4; $i++){
+    for($i=0; $i<2; $i++){
         $aluno = new Escola();
-        $aluno->setNome(readline("Qual o seu nome? "))->setEndereco(readline("Qual seu endereço? "))->setQuantAlunos(readline("Quantos alunos tem em sua escola? "));
+        $aluno->setNome(readline("Qual o nome da escola? "))->setEndereco(readline("Qual o endereço da escola? "))->setQuantAlunos(readline("Quantos alunos tem na escola? "));
 
-        $alunos[] = $aluno;
+        array_push($alunos, $aluno);
     }
+
+    foreach($alunos as $aluno){
+        print(" Nome: ".$aluno->getNome()."\n Endereço: ".$aluno->getEndereco()."\n Quant.Aluno: ".$aluno->getQuantAlunos()."\n");
+    }
+
+    $escolaMaisAlunos = 0;
+    $maxAlunos = 0;
+
+foreach ($alunos as $aluno) {
+    if ($aluno->getQuantAlunos() > $maxAlunos) {
+        $maxAlunos = $aluno->getQuantAlunos();
+        $escolaMaisAlunos = $aluno;
+    }
+}
+print("Escola com mais alunos dados:\n");
+print(" Nome: ".$escolaMaisAlunos->getNome()."\n Endereço: ".$escolaMaisAlunos->getEndereco()."\n Quant.Aluno: ".$escolaMaisAlunos->getQuantAlunos()."\n");
+
+    
 ?>
