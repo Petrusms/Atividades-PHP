@@ -111,7 +111,14 @@ while(true){
         
         case 3: 
             if(count($dados)>0){
-                $num=readline("Qual número você vai querer remover a partir do 1?\n");
+                $i=1;
+
+                print("Qual número você vai querer remover a partir do 1?\n");
+                foreach($dados as $d){
+                    print($i.")".$d->getNome()."\n");
+                    $i++;
+                }
+                $num=readline("");
                 $num = $num - 1;
                 excluir($dados, $num);
                 break;
