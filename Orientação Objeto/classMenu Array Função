@@ -113,9 +113,9 @@ while(true){
             if(count($dados)>0){
                 $i=1;
 
-                print("Qual número você vai querer remover a partir do 1?\n");
+                print("Qual número você vai querer remover?\n");
                 foreach($dados as $d){
-                    print($i.")".$d->getNome()."\n");
+                    print($i.")".$d->getNome()." ".$d->getSobrenome().", ".$d->getIdade()."\n");
                     $i++;
                 }
                 $num=readline("");
