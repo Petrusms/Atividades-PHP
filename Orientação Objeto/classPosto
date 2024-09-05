@@ -10,11 +10,15 @@ class Posto{
     }
 
     public function abastecer($litros){
-        if($litros>$this->litrosGasolina){
-            return false;
-        }else{
+        if($litros<=$this->litrosGasolina){
+            $this->litrosGasolina = $this->litrosGasolina-$litros;
+            array_push($this->abastecimeto, $litros);
             return true;
+        }else{
+            return false;
         }
+    
+        
         
     }
     public function reporEstoque(){
@@ -31,6 +35,7 @@ class Posto{
     {
         return $this->abastecimeto;
     }
+
 }
 
 $posto=new Posto();
@@ -43,13 +48,11 @@ while(true){
 
     switch($num){
         case 1:
-            $posto->abastecer(readline("Quantos litros deseja abastecer?\n"));
-            if($posto->abastecer($litros)==true){
-                $this->litrosGasolina= $this->litrosGasolina - $litros;
-                array_push($this->abastecimeto, $litros);
+            $litros=readline("Quantos litros deseja abastecer?\n");
+            if($posto->abastecer($litros)){
                 print("Abastecimento feito!\n");
             }else{
-                print("Não foi possivel abastecer, abasteça o estoque primeiro!!!\n");
+                print("Não foi possivel abastecer, reabasteça o estoque primeiro!!!\n");
             }
             break;
         case 2:
@@ -60,7 +63,8 @@ while(true){
             if(count($posto->getAbastecimeto())>0){
             $i=1;
                 foreach($posto->getAbastecimeto() as $dados){
-                    print($i.") ".$dados." Litros\n");
+                    print("Abastecimento ".$i.") ".$dados." Litros\n");
+                    $i++;
                 }
             }else{
                 print("Não teve nenhum abastecimento listado!!!\n");
@@ -75,6 +79,5 @@ while(true){
 
     }
 
-    
 }
 ?>
