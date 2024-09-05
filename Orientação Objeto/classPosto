@@ -1,0 +1,80 @@
+<?php
+class Posto{
+    private int $litrosGasolina;
+    private $abastecimeto;
+
+    public function __construct()
+    {
+        $this->litrosGasolina = 0;
+        $this->abastecimeto = [];
+    }
+
+    public function abastecer($litros){
+        if($litros>$this->litrosGasolina){
+            return false;
+        }else{
+            return true;
+        }
+        
+    }
+    public function reporEstoque(){
+        if($this->litrosGasolina==0){
+            $this->litrosGasolina=100;
+            return true;
+        }
+    }
+
+    /**
+     * Get the value of abastecimeto
+     */
+    public function getAbastecimeto()
+    {
+        return $this->abastecimeto;
+    }
+}
+
+$posto=new Posto();
+while(true){
+    print("O que deseja fazer?\n");
+    print("1: Abastecer\n");
+    print("2: Repor estoque\n");
+    print("3: Listar abastecimento\n");
+    $num=readline("0: Encerrar o pragrama\n");
+
+    switch($num){
+        case 1:
+            $posto->abastecer(readline("Quantos litros deseja abastecer?\n"));
+            if($posto->abastecer($litros)==true){
+                $this->litrosGasolina= $this->litrosGasolina - $litros;
+                array_push($this->abastecimeto, $litros);
+                print("Abastecimento feito!\n");
+            }else{
+                print("Não foi possivel abastecer, abasteça o estoque primeiro!!!\n");
+            }
+            break;
+        case 2:
+            $posto->reporEstoque();
+            print("Estoque reabastecido com sucesso!!\n");
+            break;
+        case 3: 
+            if(count($posto->getAbastecimeto())>0){
+            $i=1;
+                foreach($posto->getAbastecimeto() as $dados){
+                    print($i.") ".$dados." Litros\n");
+                }
+            }else{
+                print("Não teve nenhum abastecimento listado!!!\n");
+            }
+            break;
+        case 0:
+            print("Programa encerrado...\n");
+            return true;
+        
+        default: 
+            print("Opção invalida!\n");
+
+    }
+
+    
+}
+?>
