@@ -1,0 +1,60 @@
+<?php
+class Trapezio {
+    private float $baseMaior;
+    private float $baseMenor;
+    private float $altura;
+
+    public function __construct($baseMaior, $baseMenor, $altura) {
+        $this->baseMaior = $baseMaior;
+        $this->baseMenor = $baseMenor;
+        $this->altura = $altura;
+    }
+
+    public function calcularArea(): float {
+        // Calcula a área do trapézio
+        return (($this->baseMaior + $this->baseMenor) * $this->altura) / 2;
+    }
+
+    public function getBaseMaior(): float {
+        return $this->baseMaior;
+    }
+
+    public function getBaseMenor(): float {
+        return $this->baseMenor;
+    }
+
+    public function getAltura(): float {
+        return $this->altura;
+    }
+}
+
+$trapezios = [];
+
+for ($i = 0; $i < 4; $i++) {
+    echo "Digite os dados do trapézio " . ($i + 1) . ":\n";
+    $baseMaior = readline("Qual o valor da base maior: ");
+    $baseMenor = readline("Qual o valor da base menor: ");
+    $altura = readline("Qual o valor da altura: ");
+    
+    $trapezio = new Trapezio($baseMaior, $baseMenor, $altura);
+    $trapezios[] = $trapezio;
+}
+
+$maiorArea = 0;
+$trapezioMaiorArea = 0;
+
+foreach ($trapezios as $trapezio) {
+    $area = $trapezio->calcularArea();
+    if ($area > $maiorArea) {
+        $maiorArea = $area;
+        $trapezioMaiorArea = $trapezio;
+    }
+}
+
+
+    print("Trapézio com a maior área:\n");
+    print("Base maior: " . $trapezioMaiorArea->getBaseMaior() . "\n");
+    print("Base menor: " . $trapezioMaiorArea->getBaseMenor() . "\n");
+    print("Altura: " . $trapezioMaiorArea->getAltura() . "\n");
+    print("Área: " . number_format($maiorArea, 2) . "\n");
+?>
