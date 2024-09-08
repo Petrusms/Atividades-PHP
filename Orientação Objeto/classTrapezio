@@ -11,18 +11,26 @@ class Trapezio {
     }
 
     public function calcularArea(): float {
-        // Calcula a área do trapézio
         return (($this->baseMaior + $this->baseMenor) * $this->altura) / 2;
     }
 
+    /**
+     * Get the value of baseMaior
+     */
     public function getBaseMaior(): float {
         return $this->baseMaior;
     }
 
+    /**
+     * Get the value of baseMenor
+     */
     public function getBaseMenor(): float {
         return $this->baseMenor;
     }
 
+    /**
+     * Get the value of altura
+     */
     public function getAltura(): float {
         return $this->altura;
     }
@@ -49,6 +57,7 @@ foreach ($trapezios as $trapezio) {
         $maiorArea = $area;
         $trapezioMaiorArea = $trapezio;
     }
+
 }
 
 
