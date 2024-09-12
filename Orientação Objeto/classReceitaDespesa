@@ -1,0 +1,161 @@
+<?php
+class Receita{
+
+    private string $descricao;
+    private float $valor;
+
+    /**
+     * Get the value of descricao
+     */
+    public function getDescricao(): string
+    {
+        return $this->descricao;
+    }
+
+    /**
+     * Set the value of descricao
+     */
+    public function setDescricao(string $descricao): self
+    {
+        $this->descricao = $descricao;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of valor
+     */
+    public function getValor(): float
+    {
+        return $this->valor;
+    }
+
+    /**
+     * Set the value of valor
+     */
+    public function setValor(float $valor): self
+    {
+        $this->valor = $valor;
+
+        return $this;
+    }
+
+}
+
+class Despesa{
+
+    private string $descricao;
+    private float $valor;
+
+    /**
+     * Get the value of descricao
+     */
+    public function getDescricao(): string
+    {
+        return $this->descricao;
+    }
+
+    /**
+     * Set the value of descricao
+     */
+    public function setDescricao(string $descricao): self
+    {
+        $this->descricao = $descricao;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of valor
+     */
+    public function getValor(): float
+    {
+        return $this->valor;
+    }
+
+    /**
+     * Set the value of valor
+     */
+    public function setValor(float $valor): self
+    {
+        $this->valor = $valor;
+
+        return $this;
+    }
+}
+
+$arrayReceita = [];
+$arrayDespesa = [];
+while(true){
+
+    print("----------Menu----------\n");
+    print("O que deseja fazer?\n");
+    print("1: Adicionar receita\n");
+    print("2: Adicionar despesa\n");
+    print("3: Listar receitas\n");
+    print("4: Listar despesas\n");
+    print("5: Sumarizar\n");
+
+    $opcao=readline("0: Encerrar o pragrama");
+    print("\n");
+    switch($opcao){
+        case 1:
+            $receita = new Receita();
+            $receita->setDescricao(readline("De onde vem sua receita?"))->setValor(readline("Quanto que você recebe de receita? \n\n"));
+            $arrayReceita[]=$receita;
+            break;
+
+        case 2:
+            $despesa = new Despesa();
+            $despesa->setDescricao(readline("Com o que você gastou seu dinheiro?"))->setValor(readline("Qual foi a despesa?"));
+            $arrayDespesa[]=$despesa;
+            break;
+
+        case 3:
+            if(count($arrayReceita)>0)
+                foreach ($arrayReceita as  $r) {
+                    print("Descrição: ".$r->getDescricao()."\nValor: ".$r->getValor()."R$\n");
+            }else {
+                print("Não há receitas adicionadas ainda!!!\n");
+            }
+            break;
+
+        case 4:
+            if(count($arrayDespesa)>0)
+                foreach ($arrayDespesa as  $d) {
+                    print("Descrição: ".$d->getDescricao()."\nDespesa: ".$d->getValor()."R$\n");
+            }else{
+                print("Não há despesas adicionadas ainda!!!\n");
+            }
+            break;
+
+        case 5:
+
+            $totalReceita=0;
+            $totalDespesa=0;
+            foreach ($arrayReceita as  $receita) {
+                $totalReceita += $receita->getValor();
+            }
+            foreach($arrayDespesa as $despesa){
+                $totalDespesa += $despesa->getValor();
+            }
+
+            $saldo = $totalReceita-$totalDespesa;
+
+            print("Saldo: R$ ".$saldo."\n");
+            print("Total de receitas: R$ ".$totalReceita."\n");
+            print("Total de despesas: R$ ".$totalDespesa."\n\n");
+            break;
+
+        case 0:
+
+            print("Programa encerrado...\n");
+            return true;
+
+        default:
+            print("Opção invalida!\n");
+    }
+
+    
+}
+?>
