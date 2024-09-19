@@ -1,12 +1,8 @@
 <?php
-
-require_once("Turma.php");
-
-class Aluno{
+class Turma
+{
     private string $nome;
-    private int $idade;
-
-    private Turma $turma;
+    private string $curso;
 
     /**
      * Get the value of nome
@@ -27,37 +23,19 @@ class Aluno{
     }
 
     /**
-     * Get the value of idade
+     * Get the value of curso
      */
-    public function getIdade(): int
+    public function getCurso(): string
     {
-        return $this->idade;
+        return $this->curso;
     }
 
     /**
-     * Set the value of idade
+     * Set the value of curso
      */
-    public function setIdade(int $idade): self
+    public function setCurso(string $curso): self
     {
-        $this->idade = $idade;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of turma
-     */
-    public function getTurma(): Turma
-    {
-        return $this->turma;
-    }
-
-    /**
-     * Set the value of turma
-     */
-    public function setTurma(Turma $turma): self
-    {
-        $this->turma = $turma;
+        $this->curso = $curso;
 
         return $this;
     }
