@@ -21,3 +21,4 @@ print("Nome: " . $turma->getNome() . " | Curso: " . $turma->getCurso() . "\n");
 print("Alunos:\n");
 foreach($turma->getArray() as $dados)
     print(" - " . $dados->getNome() . ", " . $dados->getIdade() . " anos\n");
+?>
