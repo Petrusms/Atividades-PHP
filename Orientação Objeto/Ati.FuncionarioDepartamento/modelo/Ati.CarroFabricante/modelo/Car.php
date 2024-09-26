@@ -1,46 +1,62 @@
 <?php
-class Manufacturer{
-    private string $name;
-    private string $acronym;
+require_once("Manufacturer.php");
 
-    public function __construct($name, $acronym)
+class Car{
+    private string $model;
+    private int $yearManufacturing;
+    private Manufacturer $manufacturer;
+    
+
+    /**
+     * Get the value of model
+     */
+    public function getModel(): string
     {
-        $this->name = $name;
-        $this->acronym = $acronym;
+        return $this->model;
     }
 
     /**
-     * Get the value of name
+     * Set the value of model
      */
-    public function getName(): string
+    public function setModel(string $model): self
     {
-        return $this->name;
-    }
-
-    /**
-     * Set the value of name
-     */
-    public function setName(string $name): self
-    {
-        $this->name = $name;
+        $this->model = $model;
 
         return $this;
     }
 
     /**
-     * Get the value of acronym
+     * Get the value of yearManufacturing
      */
-    public function getAcronym(): string
+    public function getYearManufacturing(): int
     {
-        return $this->acronym;
+        return $this->yearManufacturing;
     }
 
     /**
-     * Set the value of acronym
+     * Set the value of yearManufacturing
      */
-    public function setAcronym(string $acronym): self
+    public function setYearManufacturing(int $yearManufacturing): self
     {
-        $this->acronym = $acronym;
+        $this->yearManufacturing = $yearManufacturing;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of manufacturer
+     */
+    public function getManufacturer(): Manufacturer
+    {
+        return $this->manufacturer;
+    }
+
+    /**
+     * Set the value of manufacturer
+     */
+    public function setManufacturer(Manufacturer $manufacturer): self
+    {
+        $this->manufacturer = $manufacturer;
 
         return $this;
     }
