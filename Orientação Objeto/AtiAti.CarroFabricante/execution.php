@@ -60,39 +60,28 @@ while(true){
             }
             break;
         case 2:
-            if((count($carros)) > 0){
-                $qtd = readline("Quantos carros você deseja remover?\n");
-                if((count($carros)+1) >= $qtd){
-                    for($i=0; $i<$qtd; $i++){
-                        if(count($carros)>0){
-                            $i=1;
+            if(count($carros)>0){
+                $i=1;
 
-                            print("Qual número você vai querer remover?\n");
-                            foreach($carros as $c){
-                                if($c !== null){
-                                    print($i.")".$c->getModel()." | ". $c->getYearManufacturing() ."\n");
-                                    $i++;
-                                }
-                            }
-                            $num=readline("");
-                            $num = $num - 1;
-                            
-                            if ($num <= count($carros)) {
-                                array_splice($carros, $num, 1);
-                                print("Removido com sucesso!\n");
-                                break;
-                            } else {
-                                print("Número inválido! Não foi possível remover.\n");
-                            }
-                            break;
-                        }
+                print("Qual número você vai querer remover?\n");
+                foreach($carros as $c){
+                    if($c !== null){
+                        print($i.")".$c->getModel()." | ". $c->getYearManufacturing() ."\n");
+                        $i++;
                     }
-                } else {
-                    print("Não é possivel remover essa quantidade!!!\n");
-                    print("Só tem essa quantidade de carros para remover: ". count($carros) ."\n");
-                    break;
                 }
-            } else {
+                $num=readline("");
+                $num = $num - 1;
+                
+                if ($num <= count($carros)) {
+                    array_splice($carros, $num, 1);
+                    print("Removido com sucesso!\n");
+                    break;
+                } else {
+                    print("Número inválido! Não foi possível remover.\n");
+                }
+                break;
+            }else {
                 print("Não tem carros cadastrados para excluir!!!\n");
                 break;
             }
