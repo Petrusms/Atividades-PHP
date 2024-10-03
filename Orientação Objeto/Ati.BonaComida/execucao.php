@@ -54,8 +54,10 @@ while(true){
     switch($num){
         case 1:
             print("\n");
-            if(true){
-            array_push($pedidos, cadastro($pratos));
+
+            $pedido = cadastro($pratos);
+            if($pedido){
+                array_push($pedidos, $pedido);
             }
             break;
         case 2:
