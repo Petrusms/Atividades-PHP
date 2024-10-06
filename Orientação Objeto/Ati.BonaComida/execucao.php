@@ -16,18 +16,21 @@ function cadastro($pratos){
     foreach($pratos as $p){
         print($p->getNum()." | ". $p->getNome() . " | ". $p->getValor() ."\n");
     }
-    $numPrato = readline("Qual é o número do prato?");
-    foreach($pratos as $p){
-        if($p->getNum() == $numPrato) {
-            $pedido = new Pedido;
-            $pedido->setNomeCli(readline("Qual o nome do cliente?\n"))
-                ->setNomeGarcom(readline("Qual o nome do garçom?\n"))
-                ->setPrato($p);
-            return $pedido;
+    $parar = true;
+    while($parar = true){
+        $numPrato = readline("Qual é o número do prato?");
+        foreach($pratos as $p){
+            if($p->getNum() == $numPrato) {
+                $pedido = new Pedido;
+                $pedido->setNomeCli(readline("Qual o nome do cliente?\n"))
+                    ->setNomeGarcom(readline("Qual o nome do garçom?\n"))
+                    ->setPrato($p);
+                return $pedido;
+                $parar = false;
+            }
         }
-    }
-    print("Número do prato não encontrado!!!\n");
-    return null;
+        print("Número do prato não encontrado!!!\n");
+    } 
 }
 
 while(true){
@@ -54,11 +57,8 @@ while(true){
     switch($num){
         case 1:
             print("\n");
-
             $pedido = cadastro($pratos);
-            if($pedido){
-                array_push($pedidos, $pedido);
-            }
+            array_push($pedidos, $pedido);
             break;
         case 2:
             if(count($pedidos)>0){
@@ -75,10 +75,10 @@ while(true){
                 
                 if ($num <= count($pedidos)) {
                     array_splice($pedidos, $num, 1);
-                    print("Removido com sucesso!\n");
+                    print("Pedido cancelado com sucesso!\n");
                     break;
                 } else {
-                    print("Número inválido! Não foi possível remover.\n");
+                    print("Número inválido! Não foi possível cancelar o pedido.\n");
                 }
                 break;
             }else {
@@ -94,7 +94,7 @@ while(true){
                 }
             break;
             } else {
-                print("Não tem carros cadastrados!!!\n");
+                print("Não tem pedidos cadastrados!!!\n");
                 break;
             } 
         case 4:
@@ -106,8 +106,13 @@ while(true){
                     $pedidosTotal++;
                 }
             }
-            print("Foram feitos ". $pedidosTotal ." pedidos, e o valor total de todos foi R$ ". $valorTotal ."\n");
+            if($pedidos > 0 && $valorTotal > 0){
+                print("Foram feitos ". $pedidosTotal ." pedidos, e o valor total de todos foi R$ ". $valorTotal ."\n");
             break;
+            }else{
+                print("Não foi feito nenhuma venda ainda!!!.\n");
+                break;
+            }
         case 0:
             print("Programa encerrado...\n");
             return true;
