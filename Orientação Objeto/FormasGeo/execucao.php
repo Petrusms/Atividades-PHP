@@ -8,20 +8,17 @@ print("Qua, Cir e Ret\n");
 $type = readline("");
 
 if($type === "Qua"){
-    $Quadrado = new quadrado();
-    $Quadrado->setLado(readline("Qual o valor do lado desse quadrado?\n"));
-    print("O resultado da área é igual a ".$Quadrado->getArea()."\n");
-    print($Quadrado->getDesenho());
+    $forma = new quadrado();
+    $forma->setLado(readline("Qual o valor do lado desse quadrado?\n"));
 }else if($type === "Cir"){
-    $Circulo = new circulo();
-    $Circulo->setRaio(readline("Qual o valor do raio desse círculo?\n"));
-    print("O resultado da área é igual a ".$Circulo->getArea()."\n");
-    print($Circulo->getDesenho());
+    $forma = new circulo();
+    $forma->setRaio(readline("Qual o valor do raio desse círculo?\n"));
 }else{
-    $Retangulo = new retangulo();
-    $Retangulo->setAltura(readline("Qual o valor da altura desse retângulo?\n"));
-    $Retangulo->setBase(readline("Qual o valor da altura desse retângulo?\n"));
-    print("O resultado da área é igual a ".$Retangulo->getArea()."\n");
-    print($desenho);
+    $forma = new retangulo();
+    $forma->setAltura(readline("Qual o valor da altura desse retângulo?\n"));
+    $forma->setBase(readline("Qual o valor da altura desse retângulo?\n"));
 }
+
+print("O resultado da área é igual a ".$forma->getArea()."\n");
+print($forma->getDesenho());
 ?>
