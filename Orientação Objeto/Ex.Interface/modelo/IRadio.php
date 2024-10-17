@@ -1,5 +1,6 @@
 <?php
-interface IRelogio{
-    public function mostrarHoras();
+interface IRadio{
+    public function ligarRadio();
+    public function desligarRadio();
 }
 ?>
