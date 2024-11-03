@@ -1,12 +1,12 @@
 <?php
     require_once("Automoveis.php");
-    class CarroPasseio extends Automoveis{
+    class Caminhao extends Automoveis{
         private int $qtdCarga;
         private int $altura;
 
         public function getDados(){
             return "Modelo: ".$this->modelo."\nVelocidade Máxima: ".$this->velocidadeMax.
-                    "Cor: ".$this->cor."\nQuantidade de Carga: ".$this->getQtdCarga()."\nAltura: ".$this->getAltura();
+                    "Km/h\nCor: ".$this->cor."\nQuantidade de Carga: ".$this->getQtdCarga()."T\nAltura: ".$this->getAltura()."m";
         }
 
         /**
