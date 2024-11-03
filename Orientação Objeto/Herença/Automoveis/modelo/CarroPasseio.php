@@ -5,7 +5,7 @@
 
         public function getDados(){
             return "Modelo: ".$this->modelo."\nVelocidade Máxima: ".$this->velocidadeMax.
-                    "Cor: ".$this->cor."\nQuantidade de Passageiros: ".$this->getQtdPassageiros();
+                    "Km/h\nCor: ".$this->cor."\nQuantidade de Passageiros: ".$this->getQtdPassageiros()."\n";
         }
 
         /**
