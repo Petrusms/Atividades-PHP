@@ -5,10 +5,11 @@ class Hotel extends Espaco{
     private bool $cafeIncluso;
 
 
-    public function getDadosHotel(){
+    public function getDadosHotel() {
         $dados = $this->getDadosEspaco();
-        $dados .= " | Estrelas: ".$this->getNumEstrelas();
-        $dados .= " | Café incluso: ".($this->cafeIncluso ? 'Sim' ou 'Não');
+        $dados .= " | Estrelas: " .$this->getNumEstrelas();
+        $dados .= " | Café incluso: ".($this->cafeIncluso ? "Sim" : "Não")."\n";
+        return $dados;
     }
 
     /**
