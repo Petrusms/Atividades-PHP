@@ -4,7 +4,9 @@ class PontoTuristico extends Espaco{
     private string $duracaoDaVisita;
     
     public function getDadosPontoTuristico(){
-        return "Nome: ".$this->nome." | Endereço: ".$this->endereco." | Duração da Visita: ".$this->getDuracaoDaVisita()."\n";
+        $dados = $this->getDadosEspaco();
+        $dados .= " | Duração da Visita: ".$this->getDuracaoDaVisita()."\n";
+        return $dados;
     }
 
     /**
