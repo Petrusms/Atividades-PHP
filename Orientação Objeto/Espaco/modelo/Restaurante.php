@@ -4,7 +4,9 @@ class Restaurante extends Espaco{
     private string $tipoFood;
 
     public function getDadosRestaurante(){
-        return "Nome: ".$this->nome." | Endereço: ".$this->endereco." | Tipo da Comida: ".$this->getTipoFood()."\n";
+        $dados = $this->getDadosEspaco();
+        $dados .= " | Tipo da Comida: ".$this->getTipoFood()."\n";
+        return $dados;
     }
 
     /**
