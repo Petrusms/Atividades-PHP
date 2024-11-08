@@ -1,3 +1,4 @@
+
 <?php
 require_once("modelo/Hotel.php");
 require_once("modelo/Restaurante.php");
@@ -7,59 +8,62 @@ $espacos = [];
 
 function excluir($espacos) { 
     if (empty($espacos)) {
-        print("Não há pessoas cadastradas para você remover!\n");
+        print("Não há espaços cadastrados para você remover!\n");
         return;
     }
     
-    print("Qual desses você quer remover? \n");
     listar($espacos);
 
-    $encontrado = false;
-    while($encontrado){
-        $tipo = readline("Qual  o tipo do local que deseja remover?(Restaurante, Hotel ou Ponto Turistico)");
-            if($tipo === "Restaurante" || $tipo === "restaurante"){
-                $nome = readline("Para excluir informe o nome do Restaurante: ");
-                $tipo = readline("\nQual o tipo de comida?");
-            }else if($tipo === "Hotel" || $tipo === "hotel"){
-                $nome = readline("Para excluir informe o nome do Hotel: ");
-            $tipo = readline("\nQual o número de estrelas?");
-            }else if($tipo === "Ponto Turistico" || $tipo === "ponto turistico"){
-                $nome = readline("Para excluir informe o nome do Ponto Turistico: ");
-                $tipo = readline("\nQuanto tem durou a visitação do Ponto Turistico?");
-            }else{
-                print("O que você digitou não se encaixa em nada!!!");
-            }
+    while (true) {
+        $tipo = readline("Qual o tipo do local que deseja remover? (Restaurante, Hotel ou Ponto Turistico) ");
         
+        if ($tipo === "Restaurante" || $tipo === "restaurante") {
+            $nome = readline("Para excluir informe o nome do Restaurante: ");
+            $tipoComida = readline("Qual o tipo de comida? ");
+        } elseif ($tipo === "Hotel" || $tipo === "hotel") {
+            $nome = readline("Para excluir informe o nome do Hotel: ");
+            $numEstrelas = readline("Qual o número de estrelas? ");
+        } elseif ($tipo === "Ponto Turistico" || $tipo === "ponto turistico") {
+            $nome = readline("Para excluir informe o nome do Ponto Turistico: ");
+            $duracaoVisita = readline("Quanto durou a visitação do Ponto Turistico? ");
+        } else {
+            print("O que você digitou não se encaixa em nada!!!\n");
+            continue;
+        }
+
+        $encontrado = false; 
+
         foreach ($espacos as $index => $dado) {
-            if($dado instanceof Restaurante){
-                if ($dado->getNome() === $nome && $dado->getTipoFood() === $tipo){
+            if ($dado instanceof Restaurante) {
+                if ($dado->getNome() === $nome && $dado->getTipoFood() === $tipoComida) {
                     array_splice($espacos, $index, 1);
                     print("Removido com sucesso!\n");
-                    $encontrado = true;
                     return $espacos;
+                    $encontrado = true;
                     break;
                 }
-            } elseif($dado instanceof Hotel){
-                if ($dado->getNome() === $nome && $dado->getNumEstrelas() === $tipo){
+            } elseif ($dado instanceof Hotel) {
+                if ($dado->getNome() === $nome && $dado->getNumEstrelas() === $numEstrelas) { 
                     array_splice($espacos, $index, 1);
                     print("Removido com sucesso!\n");
-                    $encontrado = true;
                     return $espacos;
+                    $encontrado = true;
                     break;
                 }
-            } elseif($dado instanceof PontoTuristico){
-                if ($dado->getNome() === $nome && $dado->getDuracaoDaVisita() === $tipo){
+            } elseif ($dado instanceof PontoTuristico) {
+                if ($dado->getNome() === $nome && (string)$dado->getDuracaoDaVisita() === (string)$duracaoVisita) { 
                     array_splice($espacos, $index, 1);
                     print("Removido com sucesso!\n");
-                    $encontrado = true;
                     return $espacos;
+                    $encontrado = true;
                     break;
                 }
-            } else{
-                print("O que você digitou não se encaixa em nada!!!");
             }
         }
-        print("Valor não encontrado!!!\n");
+
+        if (!$encontrado) {
+            print("Valor não encontrado!!!\n");
+        }
     }
 }
 
@@ -121,7 +125,21 @@ while(true){
                     $espaco->setNome(readline("Qual o nome do Hotel?"));
                     $espaco->setEndereco(readline("Qual o enderço do Hotel?"));
                     $espaco->setNumEstrelas(readline("Qual o número de estrelas?"));
-                    $espaco->setCafeIncluso(readline("Tem café incluso?(Responda com Sim ou Não!!)"));
+
+                    $stop = true;
+                    while($stop){
+                        $tipo = readline("Tem café incluso?(Responda com Sim ou Não!!)\n");
+                        if($tipo === "Sim" || $tipo === "sim"){
+                            $espaco->setCafeIncluso(true);
+                            $stop = false;
+                        }else if($tipo === "Não" || $tipo === "não"){
+                            $espaco->setCafeIncluso(false);
+                            $stop = false;
+                        }else{
+                            print("É Sim ou Não!!!\n");
+                        }
+                    }
+                    array_push($espacos, $espaco);
                     break;
 
                 case 3:
@@ -129,6 +147,7 @@ while(true){
                     $espaco->setNome(readline("Qual o nome do Ponto Turistico?"));
                     $espaco->setEndereco(readline("Qual o enderço do Ponto Turistico?"));
                     $espaco->setDuracaoDaVisita(readline("Quanto tem durou a visitação do Ponto Turistico?"));
+                    array_push($espacos, $espaco);
                     break;
             }
             break;
