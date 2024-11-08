@@ -3,6 +3,9 @@ class Espaco{
     protected string $nome;
     protected string $endereco;
 
+    public function getDadosEspaco(){
+        return "Nome: ".$this->nome." | Endereço: ".$this->endereco;
+    }
     /**
      * Get the value of nome
      */
