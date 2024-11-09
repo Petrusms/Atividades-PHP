@@ -22,7 +22,7 @@ function excluir($espacos) {
             $tipoComida = readline("Qual o tipo de comida? ");
         } elseif ($tipo === "Hotel" || $tipo === "hotel") {
             $nome = readline("Para excluir informe o nome do Hotel: ");
-            $numEstrelas = readline("Qual o número de estrelas? ");
+            $numEstrelas = (int) readline("Qual o número de estrelas? ");
         } elseif ($tipo === "Ponto Turistico" || $tipo === "ponto turistico") {
             $nome = readline("Para excluir informe o nome do Ponto Turistico: ");
             $duracaoVisita = readline("Quanto durou a visitação do Ponto Turistico? ");
@@ -63,8 +63,11 @@ function excluir($espacos) {
 
         if (!$encontrado) {
             print("Valor não encontrado!!!\n");
+            break;
         }
+        return false;
     }
+    return $espacos;
 }
 
 function listar($espacos){
@@ -153,7 +156,7 @@ while(true){
             break;
             
         case 2:
-            excluir($espacos);
+            $espacos = excluir($espacos);
             break;
 
         case 3:
