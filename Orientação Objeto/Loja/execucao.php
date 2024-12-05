@@ -10,20 +10,20 @@ $p->setUniMedida("cm");
 print($p->getDados());
 
 $p = new Livro();
-$p->setDescricao("terror");
+$p->setDescricao("Livro terror");
 $p->setUniMedida("volumes");
 $p->setAutor("Maquiavel");
 print($p->getDados());
 
 $p = new Computador();
-$p->setDescricao(" PC gamer");
+$p->setDescricao("PC gamer");
 $p->setUniMedida("peça");
 $p->setProcessador("Intel core");
 $p->setMemoria("Kingston");
 print($p->getDados());
 
 $p = new Balde();
-$p->setDescricao(" grande");
+$p->setDescricao("Balde grande");
 $p->setUniMedida("litros");
 $p->setCapacidade(50);
 print($p->getDados());
