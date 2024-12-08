@@ -1,3 +1,4 @@
+
 <?php
 require_once("modelo/CD.php");
 require_once("modelo/DVD.php");
@@ -29,12 +30,12 @@ while(true){
         case 3:
             foreach($midia as $dado){
                 if($dado instanceof CD){
-                    print($dado->getTipo($dado));
+                    print($dado->getTipo($dado) . $dado->getdados()."\n");
                 }
             }
             foreach($midia as $dado){
                 if($dado instanceof DVD){
-                    print($dado->getTipo($dado));
+                    print($dado->getTipo($dado) . $dado->getdados()."\n");
                 }
             }
             break;
