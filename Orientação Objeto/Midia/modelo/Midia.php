@@ -4,11 +4,11 @@ class Midia{
     protected float $precoPago;
 
     public function getDados(){
-        $dados = "Descrição: ".$this->descricao;
-        $dados = " | ".$this->precoPago;
+        $dados = $this->descricao;
+        $dados.= " | ".$this->precoPago;
         return $dados;
     }
-    public function getTipo($midia){
+    public function getTipo(){
         return "Sem tipo";
     }
 
