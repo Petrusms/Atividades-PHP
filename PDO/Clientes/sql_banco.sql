@@ -1,3 +1,6 @@
+create database clientes;
+use clientes;
+
 CREATE TABLE clientes (
     id int AUTO_INCREMENT NOT NULL,
     tipo varchar(1) NOT NULL, /*Tipo de cliente: F (Físico) ou J (Jurídico)*/
@@ -9,3 +12,5 @@ CREATE TABLE clientes (
     cnpj varchar(30),
     PRIMARY KEY (id)   
 );
+
+select * from clientes;
