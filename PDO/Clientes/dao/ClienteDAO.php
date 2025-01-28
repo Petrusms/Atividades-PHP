@@ -47,5 +47,16 @@ class ClienteDAO {
         }
         return $clientes;
     }
+
+    public function buscarClientes($id) {
+        $sql = "SELECT * FROM   clientes WHERE id = ?";
+        $con = Conexao::getCon();
+
+        $stmt = $con->prepare($sql);
+        $stmt->execute(array($id));
+        $registros = $stmt->fetchAll();
+        
+        return $this->MAPClientes($registros);
+    }
 }
 ?>
