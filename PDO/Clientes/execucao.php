@@ -1,3 +1,4 @@
+
 <?php
 require_once("modelo/ClientePF.php");
 require_once("modelo/ClientePJ.php");
@@ -54,7 +55,17 @@ while(true){
             }
             break;
         case 4:
-
+            $clienteDao = new ClienteDao();
+            $registros = $clienteDao->buscarClientes(readline("Informe o codigo de identificação(id).\n"));
+            foreach($registros as $dados){
+                print("ID: {$dados->getId()}, Nome Social: {$dados->getNomeSocial()}, Email: {$dados->getEmail()}");
+                if($dados->getrTipo() == 'F'){
+                    print(", Nome: {$dados->getNome()}, CPF: {$dados->getCPF()}");
+                } else {
+                    print(", Razão Social: {$dados->getRazaoSocial()}, CNPJ: {$dados->getCNPJ()}");
+                }
+                print("\n");
+            }
             break;
         case 5:
 
