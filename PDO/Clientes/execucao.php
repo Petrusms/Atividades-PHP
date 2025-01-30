@@ -1,4 +1,5 @@
 
+
 <?php
 require_once("modelo/ClientePF.php");
 require_once("modelo/ClientePJ.php");
@@ -6,6 +7,21 @@ require_once("dao/ClienteDAO.php");
 require_once("util/Conexao.php");
 $con = Conexao::getCon();
 
+function escrever($registros){
+    if($registros!=null){
+        foreach($registros as $dados){
+            print("ID: {$dados->getId()}, Nome Social: {$dados->getNomeSocial()}, Email: {$dados->getEmail()}");
+            if($dados->getrTipo() == 'F'){
+                print(", Nome: {$dados->getNome()}, CPF: {$dados->getCPF()}");
+            } else {
+                print(", Razão Social: {$dados->getRazaoSocial()}, CNPJ: {$dados->getCNPJ()}");
+            }
+            print("\n");
+        }
+    }else{
+        print("Nenhum cliente encontrado.\n");
+    }
+}
 while(true){
     print("╔═══════Cadastro Clientes══════╗\n");
     print("║      O que deseja fazer?     ║\n");
@@ -44,31 +60,38 @@ while(true){
         case 3:
             $clienteDao = new ClienteDao();
             $registros = $clienteDao->listarClientes();
-            foreach($registros as $dados){
-                print("ID: {$dados->getId()}, Nome Social: {$dados->getNomeSocial()}, Email: {$dados->getEmail()}");
-                if($dados->getrTipo() == 'F'){
-                    print(", Nome: {$dados->getNome()}, CPF: {$dados->getCPF()}");
-                } else {
-                    print(", Razão Social: {$dados->getRazaoSocial()}, CNPJ: {$dados->getCNPJ()}");
-                }
-                print("\n");
+            if($registros==0){
+                print("Nenhum cliente cadrastado!!\n");
+            }else{
+                escrever($registros);
             }
             break;
         case 4:
             $clienteDao = new ClienteDao();
-            $registros = $clienteDao->buscarClientes(readline("Informe o codigo de identificação(id).\n"));
-            foreach($registros as $dados){
-                print("ID: {$dados->getId()}, Nome Social: {$dados->getNomeSocial()}, Email: {$dados->getEmail()}");
-                if($dados->getrTipo() == 'F'){
-                    print(", Nome: {$dados->getNome()}, CPF: {$dados->getCPF()}");
-                } else {
-                    print(", Razão Social: {$dados->getRazaoSocial()}, CNPJ: {$dados->getCNPJ()}");
-                }
-                print("\n");
-            }
+            $registros = $clienteDao->listarClientes();
+            if($registros!=null){
+                $registros = $clienteDao->buscarClientes(readline("Informe o codigo de identificação(id)."));
+                escrever($registros);
+            }else{
+                print("Nenhum cliente cadrastado!!\n");            }
             break;
         case 5:
+            $clienteDao = new ClienteDao();
+            $registros = $clienteDao->listarClientes();
+            if($registros==0){
+                print("Nenhum cliente cadrastado!!\n");
+            }else{
+                escrever($registros);
 
+                $ID = readline("Informe o ID que deseja excluir.");
+                $registros = $clienteDao->buscarClientes($ID);
+                if($registros!=null){
+                    $clienteDao->excluirCliente($ID);
+                    print("Cliente excluido.\n");
+                }else{
+                    print("ID de Cliente não encontrado.\n");
+                }
+            }
             break;
         case 0:
             print("Programa encerrado...\n");
