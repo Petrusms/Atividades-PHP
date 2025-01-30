@@ -1,3 +1,4 @@
+
 <?php
 require_once("modelo/Cliente.php");
 require_once("modelo/ClientePF.php");
@@ -25,7 +26,12 @@ class ClienteDAO {
         $stmt->execute();
         $registros = $stmt->fetchAll();
         
-        return $this->MAPClientes($registros);
+        $clientes = $this->MAPClientes($registros);
+        if(count($clientes)>0){
+            return $clientes;
+        }else{
+            return null;
+        }
     }
 
     private function MAPClientes(array $registros) {
@@ -56,7 +62,28 @@ class ClienteDAO {
         $stmt->execute(array($id));
         $registros = $stmt->fetchAll();
         
-        return $this->MAPClientes($registros);
+        $cliente = $this->MAPClientes($registros);
+        if(count($cliente)>0){
+            return $cliente;
+        }else{
+            return null;
+        }
+    }
+
+    public function excluirCliente($id) {
+        $sql = "DELETE FROM clientes WHERE id =?";
+        $con = Conexao::getCon();
+
+        $stmt = $con->prepare($sql);
+        $stmt->execute(array($id));
+        $registros = $stmt->fetchAll();
+        
+        $cliente = $this->MAPClientes($registros);
+        if(count($cliente)>0){
+            return $cliente;
+        }else{
+            return null;
+        }
     }
 }
 ?>
